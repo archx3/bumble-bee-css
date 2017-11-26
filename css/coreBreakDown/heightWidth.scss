@@ -1,0 +1,155 @@
+
+
+.fillParent, .fp
+{
+  height: 100%;
+  width: 100%;
+}
+
+.fillParentHorizontal, .fph
+{
+  width: 100%;
+}
+
+.fillParentVertical, .fpv
+{
+  height: 100%;
+}
+
+.fillParentHorizontalAuto, .fpha
+{
+  width: 100% ;
+  height: auto;
+}
+
+.fillParentVerticalAuto, .fpva
+{
+  height: 100%;
+  width: auto;
+}
+
+//using percentages only now
+//may need to add pixels later which would require a diff class name convention
+.fph1
+{
+  width: 10%;
+}
+
+.fph2
+{
+  width: 20%;
+}
+
+.fph3
+{
+  width: 30%;
+}
+
+.fph4
+{
+  width: 40%;
+}
+
+.fph5
+{
+  width: 50%;
+}
+
+.fph6
+{
+  width: 60%;
+}
+
+.fph7
+{
+  width: 70%;
+}
+
+.fph8
+{
+  width: 80%;
+}
+
+.fph9
+{
+  width: 90%;
+}
+
+//msg 50% is the only dimm done for the vertical fill parent
+
+.fpv1
+{
+  height: 10%;
+}
+
+.fpv2
+{
+  height: 20%;
+}
+
+.fpv3
+{
+  height: 30%;
+}
+
+.fpv4
+{
+  height: 40%;
+}
+
+.fpv5
+{
+  height: 50%;
+}
+
+.fpv6
+{
+  height: 60%;
+}
+
+.fpv7
+{
+  height: 70%;
+}
+
+.fpv8
+{
+  height: 80%;
+}
+
+.fpv9
+{
+  height: 90%;
+}
+
+.ha
+{
+  height: auto;
+}
+
+.wa
+{
+  width: auto;
+}
+
+.hwa
+{
+  height: auto;
+  width: auto;
+}
+
+.hai
+{
+  height: auto !important;
+}
+
+.wai
+{
+  width: auto !important;
+}
+
+.hwai
+{
+  height: auto !important;
+  width: auto !important;
+}

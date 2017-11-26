@@ -1,0 +1,79 @@
+
+
+
+.hidden, .hide
+{
+  display: none;
+}
+
+.centerToDiv
+{
+  margin: 0 auto;
+}
+
+.fr
+{
+  float: right !important;
+}
+
+.fl
+{
+  float: left !important;
+}
+
+.inlineBlock, .inline-block, .iblk
+{
+  display: inline-block;
+}
+
+.block, .blk
+{
+  display: block;
+}
+
+
+.abs
+{
+  position: absolute;
+}
+
+.rltv
+{
+  position: relative;
+}
+
+.fxd
+{
+  position: fixed;
+}
+
+.top0{
+  top: 0;
+}
+
+//bottom
+.btm0{
+  top: 0;
+}
+
+
+.scrollable, .scroll, .xys
+{
+  overflow: auto;
+}
+
+.yScroll, .ys
+{
+  overflow-y: auto;
+}
+
+.xScroll, .xs
+{
+  overflow-x: auto;
+}
+
+.clearfix
+{
+  clear: both;
+  float: none !important;
+}

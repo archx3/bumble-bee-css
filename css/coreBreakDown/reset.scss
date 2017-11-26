@@ -1,0 +1,117 @@
+*
+{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  border: 0;
+  outline:none;
+  /*-webkit-user-select: none;*/
+  /*transition: all .3s;*/
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*:before, *:after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus, *:active, *:hover
+{
+  outline:none;
+}
+
+@font-face {
+  font-family: "segoe mdl2 Assets";
+  src:url("../fonts/segmdl2.ttf");
+}
+
+
+a:hover, a:active, a:focus {
+  /* styling for any way a link is about to be used */
+  outline: none;
+}
+
+i.fa:not(.fa-calendar), button span{
+  pointer-events: none;
+}
+
+/*region Menu Bar*/
+
+body{
+  background:#fbfbfb;
+
+  /*background-image: url("../images/homebs/bgs1.jpg");*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden; //msg commented this out to allow scrolling the page
+}
+
+body, html
+{
+  font-family:"segoe ui","helvetica","arial",sans-serif;
+  font-weight: 300;
+}
+
+li {
+  list-style: none;
+}
+
+input::-moz-focus-inner {
+  border: 0;
+}
+
+
+p, h1, h3, div, section
+{
+  cursor: default;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+li
+{
+  list-style: none;
+}
+
+a:hover, a:active, a:focus
+{
+  /* styling for any way a link is about to be used */
+  outline: none;
+}
+
+.npe
+{
+  pointer-events: none;
+}
+
+i.fa:not(.fa-calendar), button span
+{
+  pointer-events: none;
+}
+
+p, h1, h3, div, section
+{
+  cursor: default;
+}
+
+select
+{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-image: url("/css/bumblebee/images/dChevronw.png");
+  background-repeat: no-repeat;
+  background-position: 100% 61%;
+  background-size: 30px;
+  padding-right: 25px !important;
+  outline: none;
+}
+
+select:focus
+{
+  outline: none;
+}

@@ -1,0 +1,117 @@
+
+.smdl
+{
+  font-family: "segoe mdl2 Assets", sans-serif;
+  vertical-align: text-bottom;
+  pointer-events: none;
+  /*text-transform: none;*/
+  /*color: #7cb5ec;*/
+}
+
+.thinMdl
+{
+  font-weight: 400;
+}
+
+.al /*align left*/
+{
+  text-align: left;
+}
+
+.ar /*align right*/
+{
+  text-align: right;
+}
+
+.ac, .center /*align center*/
+{
+  text-align: center;
+}
+
+.ctr
+{
+  text-align: center !important;
+}
+
+.lc /*lower case*/
+{
+  text-transform: lowercase;
+}
+
+.uc /*upper case*/
+{
+  text-transform: uppercase;
+}
+
+.ucf /*upper case first letter*/
+{
+  /*text-transform: uppercase;*/
+}
+
+.tc, .capitalise /*title case*/
+{
+  text-transform: capitalize;
+}
+
+.sm
+{
+  font-size: small;
+}
+
+.md
+{
+  font-size: medium;
+}
+
+.lg
+{
+  font-size: large;
+}
+
+.bld
+{
+  font-weight: 600;
+}
+
+.bld3
+{
+  font-weight: 300;
+}
+
+.bld4
+{
+  font-weight: 400;
+}
+
+.bld5
+{
+  font-weight: 500;
+}
+
+.bld6
+{
+  font-weight: 600;
+}
+
+.bld7
+{
+  font-weight: 700;
+}
+
+.bld8
+{
+  font-weight: 800;
+}
+
+.bld9
+{
+  font-weight: 900;
+}
+
+.ellipsify
+{
+  text-overflow: ellipsis;
+  overflow-wrap: normal;
+  overflow: hidden;
+  white-space: nowrap;
+}
