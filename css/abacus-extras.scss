@@ -1,3 +1,49 @@
+/*region pagination*/
+.paginationContainer
+{
+  border: none;
+}
+
+#pagination
+{
+  clear: both;
+}
+
+#pagination .selected
+{
+  padding: 2px 5px;
+  background-color: #deff00;;
+  color: #43484d;
+  font-weight: 500;
+}
+
+#pagination a, .goBack
+{
+  padding: 2px 5px;
+  background-color: #0078ff;
+  color: #fff;
+  font-weight: 500;
+}
+
+#pagination a:hover
+{
+  background-color: #9aa1ac;
+  color: #000;
+}
+
+/*endregion*/
+.sortableGhost
+{
+  /*width: 320px;*/
+  margin-left: 20px;
+  position: relative;
+  right: 0;
+  color: #fff;
+  background-color: var(--themeHighlightColor);
+}
+
+/*endregion*/
+
 /*region specifics msg has to be removed*/
 .commandIcon
 {
