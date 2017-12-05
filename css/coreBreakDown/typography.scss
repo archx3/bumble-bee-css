@@ -1,11 +1,10 @@
-
+/*text-transform: none;*/
+/*color: #7cb5ec;*/
 .smdl
 {
   font-family: "segoe mdl2 Assets", sans-serif;
   vertical-align: text-bottom;
   pointer-events: none;
-  /*text-transform: none;*/
-  /*color: #7cb5ec;*/
 }
 
 .thinMdl
@@ -23,7 +22,8 @@
   text-align: right;
 }
 
-.ac, .center /*align center*/
+/*align center*/
+.ac, .center
 {
   text-align: center;
 }
@@ -53,59 +53,70 @@
   text-transform: capitalize;
 }
 
-.sm
+.fs-sm
 {
   font-size: small;
 }
 
-.md
+.fs-md
 {
   font-size: medium;
 }
 
-.lg
+.fs-lg
 {
   font-size: large;
 }
 
+$nums : 3, 4, 5, 6, 7, 8, 9;
+
 .bld
 {
   font-weight: 600;
+
+  @each $num in $nums
+  {
+    &#{$num}
+    {
+      font-weight: #{$num}#{0}#{0};
+    }
+  }
 }
 
-.bld3
+$nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+
+.ltsp
 {
-  font-weight: 300;
+  @each $num in $nums
+  {
+    &#{$num}
+    {
+      letter-spacing: #{$num}px;
+    }
+  }
 }
 
-.bld4
+$nums : 4, 5, 6, 9, 10, 11, 12, 14, 16, 15, 18, 20, 22, 24, 25, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 46, 48, 50;
+
+.fts
 {
-  font-weight: 400;
+  @each $num in $nums
+  {
+    &#{$num}
+    {
+      font-size: #{$num}px;
+    }
+  }
 }
 
-.bld5
-{
-  font-weight: 500;
-}
+$transforms : (
+    "u" : "uppercase"
+);
 
-.bld6
-{
-  font-weight: 600;
-}
-
-.bld7
-{
-  font-weight: 700;
-}
-
-.bld8
-{
-  font-weight: 800;
-}
-
-.bld9
-{
-  font-weight: 900;
+.tt{
+  &-n{
+    text-transform: none;
+  }
 }
 
 .ellipsify

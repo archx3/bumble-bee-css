@@ -1,5 +1,4 @@
 
-
 .fillParent, .fp
 {
   height: 100%;
@@ -18,7 +17,7 @@
 
 .fillParentHorizontalAuto, .fpha
 {
-  width: 100% ;
+  width: 100%;
   height: auto;
 }
 
@@ -30,97 +29,41 @@
 
 //using percentages only now
 //may need to add pixels later which would require a diff class name convention
-.fph1
+$nums: 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 55, 70, 75, 80, 85, 90, 95;
+$classes : 1, 15, 2, 25, 3, 35, 4, 45, 5, 55, 6, 65, 7, 75, 8, 85, 9, 95;
+
+//horizontal or vertical
+$dimms : 'h', 'v';
+$dimms : (
+    'h' : "width",
+    'v' : "height"
+);
+
+//fill parent classes
+.fp
 {
-  width: 10%;
+  @each $dimm, $rule-key in $dimms{
+
+    &#{$dimm}05
+    {
+      #{$rule-key}: 5%;
+    }
+
+    $i : 1;
+    @each $class in $classes
+    {
+      &#{$dimm}#{$class}
+      {
+        #{$rule-key}: #{nth($nums, $i)}#{'%'};
+      }
+      $i : $i + 1;
+    }
+  }
 }
 
-.fph2
-{
-  width: 20%;
-}
-
-.fph3
-{
-  width: 30%;
-}
-
-.fph4
-{
-  width: 40%;
-}
-
-.fph5
-{
-  width: 50%;
-}
-
-.fph6
-{
-  width: 60%;
-}
-
-.fph7
-{
-  width: 70%;
-}
-
-.fph8
-{
-  width: 80%;
-}
-
-.fph9
-{
-  width: 90%;
-}
 
 //msg 50% is the only dimm done for the vertical fill parent
 
-.fpv1
-{
-  height: 10%;
-}
-
-.fpv2
-{
-  height: 20%;
-}
-
-.fpv3
-{
-  height: 30%;
-}
-
-.fpv4
-{
-  height: 40%;
-}
-
-.fpv5
-{
-  height: 50%;
-}
-
-.fpv6
-{
-  height: 60%;
-}
-
-.fpv7
-{
-  height: 70%;
-}
-
-.fpv8
-{
-  height: 80%;
-}
-
-.fpv9
-{
-  height: 90%;
-}
 
 .ha
 {
@@ -152,4 +95,39 @@
 {
   height: auto !important;
   width: auto !important;
+}
+
+$nums: 0, 2, 3, 4, 5, 6, 8, 10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 26, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 60, 70, 80, 90, 100, 110, 120, 150, 170, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700;
+
+$metrics: (
+    "h" : "height",
+    "w" : "width",
+    "hw" : ""
+);
+
+@mixin create-rules($list, $rule-key, $unit)
+{
+  @each $num in $list
+  {
+    @if ($rule-key != "")
+    {
+      .#{$unit}#{$num}
+      {
+        #{$rule-key}: #{$num}px;
+      }
+    } @else
+    {
+      .#{$unit}#{$num}
+      {
+        height: #{$num}px;
+        width: #{$num}px;
+      }
+    }
+
+  }
+}
+
+@each $met, $rule-key in $metrics
+{
+  @include create-rules($nums, #{$rule-key}, $met)
 }

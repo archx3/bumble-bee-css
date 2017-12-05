@@ -1,29 +1,100 @@
-.bdr
+$border-color-pri: var(--dividerColor);
+
+@mixin create($rule, $list)
 {
-  border: 1px solid var(--dividerColor);
+  @each $num in $list
+  {
+    &#{$num}
+    {
+      @if ($num == "")
+      {
+        #{$rule}: 1px solid $border-color-pri;
+      } @else
+      {
+        #{$rule}: #{$num}px solid $border-color-pri;
+      }
+    }
+  }
 }
 
-.bb
+.b
 {
-  border-bottom: 1px solid var(--dividerColor);
+  $nums: "", 0, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+  $border-positions: (
+      "b" : "border-bottom",
+      "t" : "border-top",
+      "l" : "border-left",
+      "r" : "border-right");
+
+  &dr
+  {
+
+    @include create("border", $nums);
+  }
+
+  @each $pos, $value in $border-positions
+  {
+    &#{$pos}
+    {
+      @include create($value, $nums);
+    }
+  }
+
 }
 
-.bb2
+@mixin create-radius-rules($list, $rule-key, $unit)
 {
-  border-bottom: 2px solid var(--dividerColor);
+  @each $num in $list
+  {
+    @if ($unit == "%")
+    {
+      &#{$num}p
+      {
+        #{$rule-key}: #{$num}#{$unit};
+      }
+    }
+    @else if($unit == "px")
+    {
+      &#{$num}
+      {
+        #{$rule-key}: #{$num}#{$unit};
+      }
+    }
+    @else
+    {
+      &#{$unit}#{$num}
+      {
+        #{$rule-key}: #{$num}px;
+      }
+    }
+  }
 }
 
-.bt
+.rc //rounded conners
 {
-  border-top: 1px solid var(--dividerColor);
+  $nums: 1, 2, 5, 10, 15, 20, 25, 50, 75;
+  @include create-radius-rules($nums, "border-radius", "%");
+
+  &
+  {
+    border-radius: 2px;
+  }
+
+  $nums: 0, 2, 3, 4, 5, 6, 8, 10, 12, 14, 18, 20, 22;
+  @include create-radius-rules($nums, "border-radius", "px");
+
+  $radius-resets : (
+      "tl" : "border-top-left-radius",
+      "tr" : "border-top-right-radius",
+      "bl" : "border-bottom-left-radius",
+      "br" : "border-bottom-right-radius");
+
+  @each $item, $value in $radius-resets{
+    @include create-radius-rules($nums, $value, $item);
+  }
 }
 
-.bl
+.circle
 {
-  border-left: 1px solid var(--dividerColor);
-}
-
-.br
-{
-  border-right: 1px solid var(--dividerColor);
+  border-radius: 50%;
 }

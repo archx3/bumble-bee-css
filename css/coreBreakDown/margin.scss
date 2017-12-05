@@ -1,81 +1,127 @@
-.m0
+$nums: 0, 2, 3, 4, 5, 8, 10, 12, 15, 20, 25, 30, 35, 40, 45, 50, 80;
+$positions: (
+    "b" : "bottom",
+    "t" : "top",
+    "l" : "left",
+    "r" : "right");
+
+@mixin create-rules($list, $rule-key, $pos, $unit)
 {
-  margin: 0;
+  @if($unit == "%")
+  {
+    @each $num in $list
+    {
+      &#{$pos}#{$num}p
+      {
+        #{$rule-key}: #{$num}#{$unit};
+      }
+    }
+  }
+  @else {
+    @each $num in $list
+    {
+      &#{$pos}#{$num}
+      {
+        #{$rule-key}: #{$num}#{$unit};
+      }
+    }
+  }
 }
-.m5
+
+@mixin create-rules2($list, $rule-key, $rule-class, $unit)
 {
-  margin: 5px;
+  @if($unit == "%")
+  {
+    @each $num in $list
+    {
+      &#{$rule-class}#{$num}p
+      {
+        margin-#{nth($rule-key, 1)}: #{$num}#{$unit};
+        margin-#{nth($rule-key, 2)}: #{$num}#{$unit};
+      }
+    }
+  }
+  @else {
+    @each $num in $list
+    {
+      &#{$rule-class}#{$num}
+      {
+        margin-#{nth($rule-key, 1)}: #{$num}#{$unit};
+        margin-#{nth($rule-key, 2)}: #{$num}#{$unit};
+      }
+    }
+  }
 }
-.m10
+
+.m
 {
-  margin: 10px;
+  &0a
+  {
+    margin: 0 auto;
+  }
+
+  &a
+  {
+    &0
+    {
+      margin: auto 0;
+    }
+
+    &a
+    {
+      margin: auto;
+    }
+  }
+
+  &t0
+  {
+    margin-top: 0;
+  }
 }
-.m15
+
+.m
 {
-  margin: 15px;
-}
 
-.mr5
-{
-  margin-right: 5px;
-}
+  @each $num in $nums
+  {
+    &#{$num}
+    {
+      margin: #{$num}px;
+    }
+  }
 
-.m20
-{
-  margin: 20px;
-}
+  @each $num in $nums
+  {
+    &#{$num}p
+    {
+      margin: #{$num}#{"%"};
+    }
+  }
 
-.m0a
-{
-  margin: 0 auto;
-}
+  @each $pos, $rule-key in $positions
+  {
+    @include create-rules($nums, margin-#{$rule-key}, $pos, "px")
+  }
+  @each $pos, $rule-key in $positions
+  {
+    @include create-rules($nums, margin-#{$rule-key}, $pos, "%")
+  }
 
-.ma0
-{
-  margin: auto 0;
-}
+  $positions: (
+      "tb" : ("top", "bottom"),
+      "tr" : ("top", "right"),
+      "tl" : ("top", "left"),
+      "lr" : ("left", "right"),
+      "lb" : ("left", "bottom")
+  );
 
-.maa
-{
-  margin: auto;
-}
+  @each $rule-class, $rule-keys in $positions
+  {
+    @include create-rules2($nums, $rule-keys, $rule-class, "px")
+  }
 
-.mt0{
-  margin-top: 0;
-}
-
-.mt2{
-  margin-top: 2px;
-}
-
-.mt5{
-  margin-top: 5px;
-}
-
-.mt10{
-  margin-top: 10px;
-}
-
-.mt15{
-  margin-top: 15px;
-}
-
-.mt25{
-  margin-top: 25px;
-}
-
-.mt30{
-  margin-top: 30px;
-}
-
-.mt45{
-  margin-top: 45px;
-}
-
-.mt50{
-  margin-top: 50px;
-}
-
-.mt80{
-  margin-top: 80px;
+  @each $rule-class, $rule-keys in $positions
+  {
+    @include create-rules2($nums, $rule-keys, $rule-class, "%")
+  }
 }
