@@ -1,177 +1,60 @@
+$nums: 0, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50;
+$positions: (
+    "b" : "bottom",
+    "t" : "top",
+    "l" : "left",
+    "r" : "right");
 
 
-.pd0
+@mixin create-rules($list, $rule-key, $unit)
 {
-  padding: 0;
+  @each $num in $list
+  {
+    &#{$unit}#{$num}
+    {
+      #{$rule-key}: #{$num}px;
+    }
+  }
 }
 
-.pd2
+.p
 {
-  padding: 2px;
-}
+  &d
+  {
+    @each $num in $nums
+    {
+      &#{$num}
+      {
+        padding: #{$num}px;
+      }
+    }
 
-.pd3
-{
-  padding: 3px;
-}
+    @each $key, $value in $positions{
+      @include create-rules($nums, "padding-" + $value, $key)
+    }
 
-.pd4
-{
-  padding: 4px;
-}
+    @mixin create-rules2($list, $rule-key, $rule-class)
+    {
+      @each $num in $list
+      {
+        &#{$rule-class}#{$num}
+        {
+          padding-#{nth($rule-key, 1)}: #{$num}px;
+          padding-#{nth($rule-key, 2)}: #{$num}px;
+        }
+      }
+    }
 
-.pd5
-{
-  padding: 5px;
-}
+    $positions: (
+        "tb" : ("top", "bottom"),
+        "tr" : ("top", "right"),
+        "tl" : ("top", "left"),
+        "lr" : ("left", "right"),
+        "lb" : ("left", "bottom")
+    );
 
-.pd10
-{
-  padding: 10px;
-}
-
-.pd15
-{
-  padding: 15px;
-}
-
-.pd20
-{
-  padding: 20px;
-}
-
-.pd25
-{
-  padding: 25px;
-}
-
-.pd30
-{
-  padding: 30px;
-}
-
-.pdt0{
-  padding-top: 0;
-}
-
-.pdb0{
-  padding-bottom: 0;
-}
-
-.pdl0{
-  padding-left: 0;
-}
-
-.pdr0{
-  padding-right: 0;
-}
-
-.pdtb0{
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.pdtb5{
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.pdtb10{
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.pdtb20{
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.pdtb30{
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.pdtb35{
-  padding-top: 35px;
-  padding-bottom: 35px;
-}
-
-.pdtb40{
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.pdtb45{
-  padding-top: 45px;
-  padding-bottom: 45px;
-}
-
-.pdtb50{
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.pdlr0{
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.pdlr2{
-  padding-left: 2px;
-  padding-right: 2px;
-}
-
-.pdlr3{
-  padding-left: 3px;
-  padding-right: 3px;
-}
-
-.pdlr4{
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-.pdlr5{
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.pdlr10{
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.pdlr15{
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.pdlr20{
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.pdlr30{
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.pdlr35{
-  padding-left: 35px;
-  padding-right: 35px;
-}
-
-.pdlr40{
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.pdlr45{
-  padding-left: 45px;
-  padding-right: 45px;
-}
-
-.pdlr50{
-  padding-left: 50px;
-  padding-right: 50px;
+    @each $rule-class, $rule-keys in $positions{
+      @include create-rules2($nums, $rule-keys, $rule-class)
+    }
+  }
 }
