@@ -82,6 +82,30 @@ $positions: (
 .m
 {
 
+  $positions: (
+      "tb" : ("top", "bottom"),
+      "tr" : ("top", "right"),
+      "tl" : ("top", "left"),
+      "lr" : ("left", "right"),
+      "lb" : ("left", "bottom")
+  );
+
+  @each $rule-class, $rule-keys in $positions
+  {
+    @include create-rules2($nums, $rule-keys, $rule-class, "px")
+  }
+
+  @each $rule-class, $rule-keys in $positions
+  {
+    @include create-rules2($nums, $rule-keys, $rule-class, "%")
+  }
+
+  $positions: (
+      "b" : "bottom",
+      "t" : "top",
+      "l" : "left",
+      "r" : "right");
+
   @each $num in $nums
   {
     &#{$num}
@@ -107,21 +131,5 @@ $positions: (
     @include create-rules($nums, margin-#{$rule-key}, $pos, "%")
   }
 
-  $positions: (
-      "tb" : ("top", "bottom"),
-      "tr" : ("top", "right"),
-      "tl" : ("top", "left"),
-      "lr" : ("left", "right"),
-      "lb" : ("left", "bottom")
-  );
 
-  @each $rule-class, $rule-keys in $positions
-  {
-    @include create-rules2($nums, $rule-keys, $rule-class, "px")
-  }
-
-  @each $rule-class, $rule-keys in $positions
-  {
-    @include create-rules2($nums, $rule-keys, $rule-class, "%")
-  }
 }
