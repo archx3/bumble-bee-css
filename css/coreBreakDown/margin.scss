@@ -1,60 +1,135 @@
-$nums: 0, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50;
+$nums: 0, 2, 3, 4, 5, 8, 10, 12, 15, 20, 25, 30, 35, 40, 45, 50, 80;
 $positions: (
     "b" : "bottom",
     "t" : "top",
     "l" : "left",
     "r" : "right");
 
-
-@mixin create-rules($list, $rule-key, $unit)
+@mixin create-rules($list, $rule-key, $pos, $unit)
 {
-  @each $num in $list
+  @if($unit == "%")
   {
-    &#{$unit}#{$num}
+    @each $num in $list
     {
-      #{$rule-key}: #{$num}px;
+      &#{$pos}#{$num}p
+      {
+        #{$rule-key}: #{$num}#{$unit};
+      }
+    }
+  }
+  @else {
+    @each $num in $list
+    {
+      &#{$pos}#{$num}
+      {
+        #{$rule-key}: #{$num}#{$unit};
+      }
     }
   }
 }
 
-.p
+@mixin create-rules2($list, $rule-key, $rule-class, $unit)
 {
-  &d
+  @if($unit == "%")
   {
-    @each $num in $nums
+    @each $num in $list
     {
-      &#{$num}
+      &#{$rule-class}#{$num}p
       {
-        padding: #{$num}px;
+        margin-#{nth($rule-key, 1)}: #{$num}#{$unit};
+        margin-#{nth($rule-key, 2)}: #{$num}#{$unit};
       }
-    }
-
-    @each $key, $value in $positions{
-      @include create-rules($nums, "padding-" + $value, $key)
-    }
-
-    @mixin create-rules2($list, $rule-key, $rule-class)
-    {
-      @each $num in $list
-      {
-        &#{$rule-class}#{$num}
-        {
-          padding-#{nth($rule-key, 1)}: #{$num}px;
-          padding-#{nth($rule-key, 2)}: #{$num}px;
-        }
-      }
-    }
-
-    $positions: (
-        "tb" : ("top", "bottom"),
-        "tr" : ("top", "right"),
-        "tl" : ("top", "left"),
-        "lr" : ("left", "right"),
-        "lb" : ("left", "bottom")
-    );
-
-    @each $rule-class, $rule-keys in $positions{
-      @include create-rules2($nums, $rule-keys, $rule-class)
     }
   }
+  @else {
+    @each $num in $list
+    {
+      &#{$rule-class}#{$num}
+      {
+        margin-#{nth($rule-key, 1)}: #{$num}#{$unit};
+        margin-#{nth($rule-key, 2)}: #{$num}#{$unit};
+      }
+    }
+  }
+}
+
+.m
+{
+  &0a
+  {
+    margin: 0 auto;
+  }
+
+  &a
+  {
+    &0
+    {
+      margin: auto 0;
+    }
+
+    &a
+    {
+      margin: auto;
+    }
+  }
+
+  &t0
+  {
+    margin-top: 0;
+  }
+}
+
+.m
+{
+
+  $positions: (
+      "tb" : ("top", "bottom"),
+      "tr" : ("top", "right"),
+      "tl" : ("top", "left"),
+      "lr" : ("left", "right"),
+      "lb" : ("left", "bottom")
+  );
+
+  @each $rule-class, $rule-keys in $positions
+  {
+    @include create-rules2($nums, $rule-keys, $rule-class, "px")
+  }
+
+  @each $rule-class, $rule-keys in $positions
+  {
+    @include create-rules2($nums, $rule-keys, $rule-class, "%")
+  }
+
+  $positions: (
+      "b" : "bottom",
+      "t" : "top",
+      "l" : "left",
+      "r" : "right");
+
+  @each $num in $nums
+  {
+    &#{$num}
+    {
+      margin: #{$num}px;
+    }
+  }
+
+  @each $num in $nums
+  {
+    &#{$num}p
+    {
+      margin: #{$num}#{"%"};
+    }
+  }
+
+  @each $pos, $rule-key in $positions
+  {
+    @include create-rules($nums, margin-#{$rule-key}, $pos, "px")
+  }
+  @each $pos, $rule-key in $positions
+  {
+    @include create-rules($nums, margin-#{$rule-key}, $pos, "%")
+  }
+
+
 }
