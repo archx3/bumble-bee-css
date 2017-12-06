@@ -1,0 +1,65 @@
+:root {
+  --propertyBarHeight: 0px;
+  --statusBarHeight: 0px;
+  --menubarHeight: 50px;
+  --toolBoxWith: 0px;
+  --coreFrameTransition: all 0.07s ease 0s; }
+
+#menuBar, #propertyBar, #workspace {
+  width: 100%;
+  display: block; }
+
+#menuBar {
+  height: 50px;
+  background-color: #6a93d4; }
+
+#propertyBar {
+  height: var(--propertyBarHeight);
+  /*background-color: orange;*/
+  transition: var(--coreFrameTransition);
+  border-top: none; }
+
+#workspace {
+  height: calc(100% - (var(--menubarHeight) + var(--propertyBarHeight)));
+  /*background-color: tomato;*/
+  overflow: hidden; }
+
+#toolbox {
+  height: 100%;
+  width: var(--toolBoxWith);
+  /*background-color: deepskyblue;*/
+  float: left;
+  transition: var(--coreFrameTransition); }
+
+#desktop {
+  width: calc(100% - (var(--toolBoxWith) + 300px));
+  margin-left: var(--toolBoxWith);
+  height: 100%;
+  /*background-color: #e0f2be;*/
+  transition: var(--coreFrameTransition);
+  overflow: hidden;
+  /*padding-top: 1%;*/
+  /*padding-left: 1%;*/ }
+
+#cards-pane {
+  display: block;
+  position: absolute;
+  right: 2px;
+  height: calc(100% - 70px);
+  width: 300px;
+  /*margin-t: 10px 0 ;*/
+  /*background-color: #ff056f;*/
+  border-left: 1px solid var(--dividerColor);
+  z-index: 1;
+  top: 60px;
+  padding: 0 5px; }
+
+#statusBar {
+  height: var(--statusBarHeight);
+  background-color: orange;
+  transition: var(--coreFrameTransition);
+  border-top: none; }
+
+/*# sourceMappingURL=coreuiframe.css.map */
+
+/*# sourceMappingURL=coreuiframe.css.map */

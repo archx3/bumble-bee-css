@@ -1,0 +1,98 @@
+$default-button-border-color: #00ff00;
+
+button{
+  /*margin: 0 10px;*/
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: all .3s;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px 10px;
+  min-height: 35px;
+  border: 1px solid $default-button-border-color;
+
+  &.tall
+  {
+    padding: 10px 5px;
+  }
+}
+
+.btn{
+  min-width: 100px;
+  padding: 10px;
+  color: #fff;
+  background-color: var(--mestBlue);
+  border: 1px solid transparent;
+
+  &:hover
+  {
+    background-color:  #fff;
+    color: var(--mestBlue);
+    border: 1px solid var(--mestBlue);
+  }
+}
+
+div.btn-group{
+
+  button
+  {
+    float: left;
+    border-right: none;
+
+    &:hover{
+      border: 1px solid $default-button-border-color;
+    }
+  }
+
+  &.rounded{
+    button:first-of-type{
+      -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+      border-top-right-radius:0;
+      border-bottom-right-radius: 0;
+    }
+
+    button:last-of-type{
+      -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+      border-top-left-radius:0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  button:last-of-type{
+    border: 1px solid $default-button-border-color;
+  }
+}
+
+.btn-sq
+{
+  min-width: unset;
+  text-align: center;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.38);
+
+  button{
+    width: 35px;
+    height: 35px;
+    padding: 3px;
+  }
+
+  &:hover
+  {
+    /*background-color:  #fff;*/
+    color: #000;
+    /*border: 1px solid #000;*/
+  }
+}
+
+.btn-sq-1{
+  width: 30px;
+  padding: 3px;
+  height: 30px;
+}
+
+.edit-btn{
+  position: absolute;
+  bottom: -92%;
+  right: 0;
+}

@@ -1,0 +1,191 @@
+/*region pagination*/
+.paginationContainer
+{
+  border: none;
+}
+
+#pagination
+{
+  clear: both;
+}
+
+#pagination .selected
+{
+  padding: 2px 5px;
+  background-color: #deff00;;
+  color: #43484d;
+  font-weight: 500;
+}
+
+#pagination a, .goBack
+{
+  padding: 2px 5px;
+  background-color: #0078ff;
+  color: #fff;
+  font-weight: 500;
+}
+
+#pagination a:hover
+{
+  background-color: #9aa1ac;
+  color: #000;
+}
+
+/*endregion*/
+.sortableGhost
+{
+  /*width: 320px;*/
+  margin-left: 20px;
+  position: relative;
+  right: 0;
+  color: #fff;
+  background-color: var(--themeHighlightColor);
+}
+
+/*endregion*/
+
+/*region specifics msg has to be removed*/
+.commandIcon
+{
+  background-image: url("images/toolBoxSprite.png");
+  background-repeat: no-repeat !important;
+  background-size: 300px;
+
+  /*background-position-y:center  !important;*/
+  /*background-size: cover !important;*/
+  /*background-size: 100% !important;*/
+  /*background-size: 900px !important;*/
+}
+
+/*TODO white icons*/
+
+#menuBar li span.commandIcon.tbIs1, span.commandIcon.tbIs1, .tbIs1
+{
+  background-image: url("images/toolBoxSprite.png") !important;
+  background-repeat: no-repeat !important;
+  background-size: 300px;
+}
+
+.commandIcon.tbIs2, #menuBar li span.commandIcon.tbIs2, .tbIs2
+{
+  background-image: url("images/toolBoxSpriteN2.png") !important;
+  background-size: 500px
+}
+
+.commandIcon.tbIs3, #menuBar li span.commandIcon.tbIs3, .tbIs3
+{
+  background-image: url("images/toolBoxSpriteN3.png") !important;
+  background-size: 350px
+}
+
+.commandIcon.tbIs4, #menuBar li span.commandIcon.tbIs4, .tbIs4
+{
+  background-image: url("images/toolBoxSpriteN4.png") !important;
+  background-size: 500px
+}
+
+.commandIcon.finIs, #menuBar li span.commandIcon.finIs
+{
+  background-image: url("images/finance.png") !important;
+  background-size: 500px
+}
+
+#toolBox .smdl
+{
+  font-size: 20px;
+}
+
+#toolBox span.svgIcon, #toolBox ul li ul li span.svgIcon
+{
+  /*background-size: auto;*/
+  background-image: url("images/svg/svgIcoSprite.svg");
+  background-size: 300px;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  display: block;
+  pointer-events: none;
+  /*background-size: 20px;*/
+  background-position-y: center;
+  margin: 5% auto;
+}
+
+#toolBox ul li ul li span.svgIcon
+{
+  background-size: 300px;
+  /* width: 25px;
+   height: 25px;*/
+  float: left;
+  margin-left: -8px;
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+#toolBox li span.commandIcon /*imhere fixme*/
+{
+  /*background-image: url("images/toolBoxSprite.png") !important;*/
+  /*background-position: 0 0;*/
+}
+
+#toolBox li span.smdl
+{
+  font-family: "segoe mdl2 Assets", sans-serif;
+  background-image: none !important;
+  vertical-align: text-bottom;
+  pointer-events: none;
+  text-align: center;
+  font-weight: bold;
+  /*text-transform: none;*/
+}
+
+#toolBox ul li span.fat
+{
+  background-image: none;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 5% auto;
+}
+
+#toolBox ul li ul li span.fat
+{
+  margin-left: -8px;
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.tabIco
+{
+  background-repeat: no-repeat;
+  pointer-events: none;
+  display: inline-block;
+  width: 25px;
+  height: 20px;
+  margin-right: 5px;
+  background-image: url("images/tabIs.png");
+  background-position: -47px -11px;
+  background-size: 350px;
+  vertical-align: text-bottom;
+}
+
+.tabIco.down
+{
+  background-position: -47px -11px;
+}
+
+.tabIco.up
+{
+  background-position: -11px -13px;
+}
+
+.tabIco.same
+{
+  background-position: -85px -11px;
+}
+
+.tabIco.start
+{
+  background-position: -122px -11px;
+}
+
+/*endregion*/

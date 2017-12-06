@@ -1,0 +1,219 @@
+//region background repeat
+.bg-r{
+  background-repeat:repeat;
+}
+
+.bg-ry{
+  background-repeat:repeat-y;
+}
+
+.bg-rx{
+  background-repeat:repeat-x;
+}
+
+.bg-nr{
+  background-repeat:no-repeat;
+}
+//endregion
+
+//region background size
+.bgs-con{
+  -webkit-background-size: contain; background-size: contain;
+}
+
+.bgs-cov{
+  -webkit-background-size: cover; background-size: cover;
+}
+
+.bgs-10p{
+  -webkit-background-size: 10%; background-size: 10%;
+}
+
+.bgs-20p{
+  -webkit-background-size: 20%; background-size: 20%;
+}
+
+.bgs-30p{
+  -webkit-background-size: 30%; background-size: 30%;
+}
+
+.bgs-40p{
+  -webkit-background-size: 40%; background-size: 40%;
+}
+
+.bgs-50p{
+  -webkit-background-size: 50%; background-size: 50%;
+}
+
+.bgs-60p{
+  -webkit-background-size: 60%; background-size: 60%;
+}
+
+.bgs-70p{
+  -webkit-background-size: 70%; background-size: 70%;
+}
+
+.bgs-80p{
+  -webkit-background-size: 80%; background-size: 80%;
+}
+
+.bgs-90p{
+  -webkit-background-size: 90%; background-size: 90%;
+}
+
+.bgs-100p{
+  -webkit-background-size: 100%; background-size: 100%;
+}
+//endregion
+
+//region background attachment
+.bga-f{
+  background-attachment:fixed;
+}
+
+.bga-s{
+  background-attachment:scroll;
+}
+
+.bga-l{
+  background-attachment:local;
+}
+//endregion
+
+//region background position
+.bgp-center{
+  background-position: center center;
+}
+
+.bgp-x-center{
+  background-position-x: center;
+}
+
+.bgp-y-center{
+  background-position-y: center;
+}
+
+.bgp5{
+  background-position: 50px 50px;
+}
+
+.bgp5p{
+  background-position: 5% 5%;
+}
+
+.bgp-x-5p{
+  -ms-background-position-x: 5%; background-position-x: 5%;
+}
+
+.bgp-y-5p{
+  -ms-background-position-y: 5%; background-position-y: 5%;
+}
+
+.bgp10p{
+  background-position: 10% 10%;
+}
+
+.bgp-x-10p{
+  -ms-background-position-x: 10%; background-position-x: 10%;
+}
+
+.bgp-y-10p{
+  -ms-background-position-y: 10%; background-position-y: 10%;
+}
+
+.bgp20p{
+  background-position: 20% 20%;
+}
+
+.bgp-x-20p{
+  -ms-background-position-x: 20%; background-position-x: 20%;
+}
+
+.bgp-y-20p{
+  -ms-background-position-y: 20%; background-position-y: 20%;
+}
+
+.bgp30p{
+  background-position: 30% 30%;
+}
+
+.bgp-x-30p{
+  -ms-background-position-x: 30%; background-position-x: 30%;
+}
+
+.bgp-y-30p{
+  -ms-background-position-y: 30%; background-position-y: 30%;
+}
+
+.bgp40p{
+  background-position: 40% 40%;
+}
+
+.bgp-x-40p{
+  -ms-background-position-x: 40%; background-position-x: 40%;
+}
+
+.bgp-y-40p{
+  -ms-background-position-y: 40%; background-position-y: 40%;
+}
+
+.bgp50p{
+  background-position: 50%;
+}
+
+.bgp-x-50p{
+  -ms-background-position-x: 50%; background-position-x: 50%;
+}
+
+.bgp-y-50p{
+  -ms-background-position-y: 50%; background-position-y: 50%;
+}
+
+.bgp60p{
+  background-position: 60% 60%;
+}
+
+.bgp-x-60p{
+  -ms-background-position-x: 60%; background-position-x: 60%;
+}
+
+.bgp-y-60p{
+  -ms-background-position-y: 60%; background-position-y: 60%;
+}
+
+.bgp70p{
+  background-position: 70% 70%;
+}
+
+.bgp-x-70p{
+  -ms-background-position-x: 70%; background-position-x: 70%;
+}
+
+.bgp-y-70p{
+  -ms-background-position-y: 70%; background-position-y: 70%;
+}
+
+.bgp80p{
+  background-position: 80% 80%;
+}
+
+.bgp-x-80p{
+  -ms-background-position-x: 80%; background-position-x: 80%;
+}
+
+.bgp-y-80p{
+  -ms-background-position-y: 80%; background-position-y: 80%;
+}
+
+.bgp90p{
+  background-position: 90% 90%;
+}
+
+.bgp-y-90p{
+  -ms-background-position-y: 90%; background-position-y: 90%;
+}
+
+.bgp-x-90p{
+  -ms-background-position-y: -90%; background-position-y: -90%;
+}
+//endregion

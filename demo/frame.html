@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en" data-user="obina">
+<head >
+   <meta charset="utf-8">
+
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="Mst Kitchen.">
+
+   <meta name="author" content="BARGE Studios Inc">
+
+   <title>Mkoo-Client</title>
+   <link rel="shortcut icon" id="favIcon" href="../favicon.ico" type="image/x-icon"/>
+
+   <link rel="stylesheet" href="../css/root.css">
+   <link rel="stylesheet" href="../css/core.css">
+   <link rel="stylesheet" href="../css/button.css">
+   <link rel="stylesheet" href="../css/coreuiframe.css">
+   <!--<link rel="stylesheet" href="css/navbar.css">-->
+   <link rel="stylesheet" href="../css/menubar.css">
+   <!--<link rel="stylesheet" href="css/propertybar.css">-->
+   <link rel="stylesheet" href="../css/main.css">
+   <link rel="stylesheet" href="../css/statusbar.css">
+   <link rel="stylesheet" href="../css/font-awesome.min.css">
+
+
+</head>
+<body  >
+
+<!--This id the menuBar section-->
+
+<!--region menubar-->
+<div id="menuBar" style="/*position: relative*/" class="noCtxMenu">
+   <div id="logoDiv">
+      <a class="" title=""  href="#">
+         <img src="../css/images/mestkitchenlogo.png" alt="stc-logo" height="45">
+      </a>
+   </div>
+   <div id="menus">
+      <ul>
+         <li class="menuItem">
+            <a class="noCtxMenu" title="" href="#">
+               <p>HOME</p>
+            </a>
+         </li>
+         <li class="vDivider"><a href="#"></a></li>
+
+         <li class="menuItem"><a class="noCtxMenu">MEALS</a></li>
+         <li class="menuItem"><a class="noCtxMenu">ORDERS</a></li>
+         <li class="menuItem"><a class="noCtxMenu">STH ELSE</a></li>
+      </ul>
+   </div> <!--main menu-->
+
+   <ul class="menuSetVDivider">
+      <li class="vDivider"><a href="#"></a></li>
+   </ul> <!--this adds a vertical divider-->
+
+   <!--button type menu items-->
+   <div class="buttonMenus">
+      <ul>
+         <li class="menuItem">
+            <a class="noCtxMenu ptr" data-dlg="Do you want to continue?,You are about to back up your school's data,backupData.php,q">1st BTN</a>
+         </li>
+         <li class="menuItem"><a class="noCtxMenu" href="../admin/logFile.php" onclick="">2nd BTN</a></li>
+
+      </ul>
+   </div>
+
+
+   <div class="buttonMenus" id="userInfo">
+      <ul class="menuSetVDivider">
+         <li class="vDivider"><a href="#"></a></li>
+      </ul>
+      <ul>
+         <li class="noHov" id="userImage">
+            <img src="../../uploads/userImages/Photo0153.jpg" alt="">
+         </li>
+         <li class="noHov">
+            <a class="noCtxMenu" onclick="">User Full Name (User Type)</a></li>
+         <!--user info + logout-->
+         <li class="menuItem dropDown "><a class="noCtxMenu dChevron">&nbsp;&nbsp;</a>
+            <ul id="userDetailPreview">
+               <li class="noHov" id="userFullName">
+                  <a class="noHov ellipsify">
+                     User Name</a>
+               </li>
+               <li class="hDivider"></li>
+               <li>
+                  <a class="noCtxMenu" href="../logout.php">
+                     <span class="svgIcon logOutIcon"></span>
+                     <p>Log out</p>
+                  </a>
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+
+</div>
+<!--endregion of menubar-->
+
+<!--region WorkSpace starts here and closes at the footer layout-->
+<div id="workspace">
+   <!--This is the toolboxSection-->
+   <div id="toolbox">
+   </div>
+
+   <!--<div id="mainBox" >-->
+
+   <div class="" id="desktop">
+      <div class="fph bb row-2 ctr greeting-actions-row">
+         <div class="maa row-body">
+            <p class="date">Thu,  21 Sep 2017</p>
+            <p class="pleasantry">Hi, Oladele Ibrahim</p>
+            <div id="greeting" class="container" style="background-image: url('../css/images/Afternoon.svg');">
+               <p>Good Afternoon</p>
+            </div>
+         </div>
+         <div class="maa row-foot">
+            <div class="m10">
+               <h3>Place order for:</h3>
+            </div>
+            <div>
+               <button class="btn">This Week</button>
+               <button class="btn">Next Week</button>
+            </div>
+         </div>
+      </div>
+      <div class="fph row-2 ctr tut-row">
+
+      </div>
+   </div>
+
+   <div id="statusBar">
+      <p>Copyright</p>
+   </div>
+
+   <div class="" id="cards-pane">
+      <div class="card heading-card fph light-shadow-component">
+         <h2 class="ctr">Your order for today</h2>
+      </div>
+      <div class="meal-card card fph light-shadow-component">
+         <div class="head fpha">
+            <h3 class="bb">Lunch</h3>
+            <span></span>
+         </div>
+         <div class="body rltv">
+            <p>Milo (Beverage)</p>
+            <p>Bread</p>
+            <p>Fruits</p>
+
+            <button class="btn-sq btn-sq-3 edit-btn">
+               <i class="fa fa-pencil"></i>
+            </button>
+         </div>
+      </div>
+      <div class="meal-card card fph light-shadow-component">
+         <div class="head fpha">
+            <h3 class="bb">Breakfast</h3>
+         </div>
+         <div class="body">
+            <p>Milo (Beverage)</p>
+            <p>Bread</p>
+            <p>Fruits</p>
+         </div>
+      </div>
+      <div class="meal-card card fph light-shadow-component">
+         <div class="head fpha">
+            <h3 class="bb">Supper</h3>
+         </div>
+         <div class="body">
+            <p>Milo (Beverage)</p>
+            <p>Bread</p>
+            <p>Fruits</p>
+         </div>
+      </div>
+   </div>
+
+   <div id="fdg-host"></div>
+</div>
+<!--endregion workspace closing div-->
+</body>
+</html>
+
+
+
+
