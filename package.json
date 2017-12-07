@@ -4,6 +4,7 @@
 
   "description": "",
   "keywords": ["css", "framework", "lightwieght"],
+  "files": ["css", "fonts", "README.md"],
   "homepage": "",
   "bugs": "",
   "license": ""
