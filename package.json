@@ -1,13 +1,11 @@
 {
   "name": "bumblebee-css",
   "version": "0.0.1",
-  "dependencies": {
-    
-  },
+
   "description": "",
-  "keywords": []/**/,
+  "keywords": ["css", "framework", "lightwieght"],
+  "files": ["css", "fonts", "README.md"],
   "homepage": "",
   "bugs": "",
-  "license": "",
-  "files": ["css", "fonts", "README.md"]
+  "license": ""
 }
