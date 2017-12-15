@@ -5,7 +5,7 @@ It has responsiveness already built-in and is absolutely free to use
 
 to theme yor app you may make use of the colors.css file to 
 
-# Bumblebee CSS / Sass Styleguide
+# CSS / Sass Styleguide
 
 *A mostly reasonable approach to CSS and Sass/SCSS, adapted from the Airbnb CSS style guide*
 
