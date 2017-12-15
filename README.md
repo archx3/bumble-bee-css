@@ -5,9 +5,9 @@ It has responsiveness already built-in and is absolutely free to use
 
 to theme yor app you may make use of the colors.css file to 
 
-# Airbnb CSS / Sass Styleguide
+# Bumblebee CSS / Sass Styleguide
 
-*A mostly reasonable approach to CSS and Sass*
+*A mostly reasonable approach to CSS and Sass/SCSS, adapted from the Airbnb CSS style guide*
 
 ## Table of Contents
 
@@ -64,8 +64,8 @@ Finally, properties are what give the selected elements of a rule declaration th
 
 ```css
 /* some selector */ {
-  background: #f1f1f1;
-  color: #333;
+  background : #f1f1f1;
+  color : #333;
 }
 ```
 
@@ -78,10 +78,10 @@ Finally, properties are what give the selected elements of a rule declaration th
 * Use soft tabs (2 spaces) for indentation
 * Prefer dashes over camelCasing in class names.
   - Underscores and PascalCasing are okay if you are using BEM (see [OOCSS and BEM](#oocss-and-bem) below).
-* Do not use ID selectors
+* DO NOT use ID selectors
 * When using multiple selectors in a rule declaration, give each selector its own line.
-* Put a space before the opening brace `{` in rule declarations
-* In properties, put a space after, but not before, the `:` character.
+* Prefer a space before the opening brace `{` in rule declarations 
+* In properties, put a space before and after, the `:` character.
 * Put closing braces `}` of rule declarations on a new line
 * Put blank lines between rule declarations
 
@@ -103,8 +103,8 @@ Finally, properties are what give the selected elements of a rule declaration th
 
 ```css
 .avatar {
-  border-radius: 50%;
-  border: 2px solid white;
+  border-radius : 50%;
+  border : 2px solid white;
 }
 
 .one,
