@@ -3,11 +3,13 @@ Bumble-bee CSS is a minimalist CSS framework that can be integrated at any stage
 to reduce custom rewrtiting of CSS for web and mobile web projects
 It has responsiveness already built-in and is absolutely free to use
 
-to theme yor app you may make use of the colors.css file to 
+To theme your app you may make use of the colors.scss file and recompile the sass package
 
 # CSS / Sass Styleguide
 
 *A mostly reasonable approach to CSS and Sass/SCSS, adapted from the Airbnb CSS style guide*
+
+#CONTRIBUTORS ARE WELCOME
 
 ## Table of Contents
 
