@@ -9,7 +9,7 @@ To theme your app you may make use of the colors.scss file and recompile the sas
 
 *A mostly reasonable approach to CSS and Sass/SCSS, adapted from the Airbnb CSS style guide*
 
-###CONTRIBUTORS ARE WELCOME
+### CONTRIBUTORS ARE WELCOME
 
 ## Table of Contents
 
