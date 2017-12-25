@@ -116,6 +116,19 @@ Finally, properties are what give the selected elements of a rule declaration th
 }
 ```
 
+**OK**
+```css
+.avatar {
+  border-radius : 50%;
+  border : 2px solid white;
+}
+
+.at-most, .three-selectors, .per-line,
+.the-next, .must-be, .put,
+.on-a, .new-line{
+  // ...
+}
+```
 ### Comments
 
 * Prefer line comments (`//` in Sass-land) to block comments.
