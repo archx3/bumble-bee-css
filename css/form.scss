@@ -119,6 +119,7 @@ label {
 
   font-size: 14px;
 }
+
 label .req {
   margin: 2px;
   color: #1ab188;
@@ -159,6 +160,10 @@ input, textarea {
   /*border-top-color: transparent;*/
   /*border-left-color: transparent;*/
   /*border-right-color: transparent;*/
+}
+
+input:not(.mb0):not(.m0){
+  margin-bottom: 4%;
 }
 
 input.short, label.short
