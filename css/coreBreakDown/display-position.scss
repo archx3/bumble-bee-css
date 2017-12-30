@@ -1,4 +1,4 @@
-
+$nums : 0, 1, 2, 3, 4, 5, 8, 10, 12, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100;
 
 
 .hidden, .hide
@@ -31,7 +31,6 @@
   display: block;
 }
 
-
 .abs
 {
   position: absolute;
@@ -47,13 +46,80 @@
   position: fixed;
 }
 
-.top0{
-  top: 0;
+.top
+{
+  @each $num in $nums{
+    &#{$num}{
+      top: #{$num}px;
+    }
+    &#{$num}p
+    {
+      top: #{$num}#{'%'};
+    }
+  }
+
+  &-ctr{
+    top: center;
+  }
 }
 
 //bottom
-.btm0{
-  top: 0;
+.btm{
+  @each $num in $nums{
+    &#{$num}{
+      bottom : #{$num}px;
+    }
+    &#{$num}p
+    {
+      bottom : #{$num}#{'%'};
+    }
+  }
+
+  &-ctr{
+    bottom: center;
+  }
+}
+
+//left
+.left{
+  @each $num in $nums{
+    &#{$num}{
+      left : #{$num}px;
+    }
+    &#{$num}p
+    {
+      left : #{$num}#{'%'};
+    }
+  }
+
+  &-ctr{
+    left: center;
+  }
+}
+
+//right
+.right{
+  @each $num in $nums{
+    &#{$num}{
+      right : #{$num}px;
+    }
+    &#{$num}p
+    {
+      right : #{$num}#{'%'};
+    }
+  }
+
+  &-ctr{
+    right: center;
+  }
+}
+
+.zi{
+  @each $num in $nums{
+    &#{$num}{
+      z-index : #{$num};
+    }
+  }
 }
 
 .oh{

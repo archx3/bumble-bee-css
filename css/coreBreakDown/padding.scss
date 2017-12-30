@@ -1,4 +1,4 @@
-$nums: 0, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50;
+$nums: 0, 1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100;
 $positions: (
     "b" : "bottom",
     "t" : "top",
@@ -14,6 +14,11 @@ $positions: (
     {
       #{$rule-key}: #{$num}px;
     }
+
+    &#{$unit}#{$num}p
+    {
+      #{$rule-key}: #{$num}#{'%'};
+    }
   }
 }
 
@@ -26,6 +31,10 @@ $positions: (
       &#{$num}
       {
         padding: #{$num}px;
+      }
+      &#{$num}p
+      {
+        padding: #{$num}#{'%'};
       }
     }
 
@@ -41,6 +50,12 @@ $positions: (
         {
           padding-#{nth($rule-key, 1)}: #{$num}px;
           padding-#{nth($rule-key, 2)}: #{$num}px;
+        }
+
+        &#{$rule-class}#{$num}p
+        {
+          padding-#{nth($rule-key, 1)}: #{$num}#{'%'};
+          padding-#{nth($rule-key, 2)}: #{$num}#{'%'};
         }
       }
     }
