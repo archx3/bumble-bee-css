@@ -58,46 +58,82 @@ $dimms : (
       }
       $i : $i + 1;
     }
+
+    $nums2: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 26, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 110, 115, 120, 125, 150, 170, 175, 180, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700;
+    @each $num in $nums2
+    {
+      &#{$dimm}-#{$num}
+      {
+        #{$rule-key}: calc(100% - #{$num}#{'px'});
+      }
+    }
   }
 }
 
-
 //msg 50% is the only dimm done for the vertical fill parent
+.h{
+  &-i{
+    height: inherit;
+  }
 
+  &a
+  {
+    height: auto;
+  }
 
-.ha
-{
-  height: auto;
+  &wa
+  {
+    height: auto;
+    width: auto;
+  }
+
+  &w-i
+  {
+    height: inherit;
+    width: inherit;
+  }
+
+  &-ii
+  {
+    height: inherit !important;
+  }
+
+  &w-ii
+  {
+    height: inherit !important;
+    width: inherit !important;
+  }
+
+  &ai
+  {
+    height: auto !important;
+  }
+
+  &wai
+  {
+    height: auto !important;
+    width: auto !important;
+  }
 }
 
-.wa
-{
-  width: auto;
+.w{
+  &-i{
+    width: inherit;
+  }
+
+  &a
+  {
+    width: auto;
+  }
+
+  &ai
+  {
+    width: auto !important;
+  }
 }
 
-.hwa
-{
-  height: auto;
-  width: auto;
-}
-
-.hai
-{
-  height: auto !important;
-}
-
-.wai
-{
-  width: auto !important;
-}
-
-.hwai
-{
-  height: auto !important;
-  width: auto !important;
-}
-
-$nums: 0, 2, 3, 4, 5, 6, 8, 10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 26, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 60, 70, 80, 90, 100, 110, 120, 150, 170, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700;
+//
+$nums: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 26, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 60, 70, 80, 90, 100, 110, 120, 150, 170, 180, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700;
 
 $metrics: (
     "h" : "height",
@@ -109,23 +145,42 @@ $metrics: (
     "hw" : ""
 );
 
-@mixin create-rules($list, $rule-key, $unit)
+@mixin create-rules($list, $rule-key, $metric, $unit)
 {
   @each $num in $list
   {
     @if ($rule-key != "")
     {
-      .#{$unit}#{$num}
-      {
-        #{$rule-key}: #{$num}px;
+      @if($unit == "px"){
+        .#{$metric}#{$num}
+        {
+          #{$rule-key}: #{$num}#{$unit};
+        }
       }
-    } @else
+      @else{
+        .#{$metric}#{$num}p
+        {
+          #{$rule-key}: #{$num}#{$unit};
+        }
+      }
+    }
+    @else
     {
-      .#{$unit}#{$num}
-      {
-        height: #{$num}px;
-        width: #{$num}px;
+      @if($unit == "px"){
+        .#{$metric}#{$num}
+        {
+          height: #{$num}#{$unit};
+          width: #{$num}#{$unit};
+        }
       }
+      @else{
+        .#{$metric}#{$num}p
+        {
+          height: #{$num}#{$unit};
+          width: #{$num}#{$unit};
+        }
+      }
+
     }
 
   }
@@ -133,5 +188,8 @@ $metrics: (
 
 @each $met, $rule-key in $metrics
 {
-  @include create-rules($nums, #{$rule-key}, $met)
+  @include create-rules($nums, #{$rule-key}, $met, "px");
+  @include create-rules($nums, #{$rule-key}, $met, "%");
 }
+
+
