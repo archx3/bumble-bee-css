@@ -22,6 +22,11 @@ $colors : #000,
 #1aee14,
 #001097,
 #000531,
+#ff1e17,
+#ff0000,
+#15b910,
+#37f33b,
+#b8f335,
 'transparent';
 
 $orangeColor : #ffcf02;
@@ -46,7 +51,11 @@ $states : ("normal" : "",
 $emmets : (
     'clr' : 'color',
     'bg-clr' : 'background-color',
-    'bd-clr' : 'border-color'
+    'bd-clr' : 'border-color',
+    'bb-clr' : 'border-bottom-color',
+    'bt-clr' : 'border-top-color',
+    'br-clr' : 'border-right-color',
+    'bl-clr' : 'border-left-color'
 );
 
 //generate color emmet classes for all mouse states
