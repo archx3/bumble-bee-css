@@ -1,0 +1,182 @@
+$nums-list : 0, 1, 2, 3, 4, 5, 8, 10, 12, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100;
+//tri-t-5
+//tri-t-5p
+//tri-t-ctr
+//
+//r-tri-t-5
+//r-tri-t-5p
+//r-tri-t-ctr
+
+
+
+$positions : (
+    "b" : "bottom",
+    "t" : "top",
+    "l" : "left",
+    "r" : "right");
+
+$positions-key-matches : (
+    "top" : (1 : "bottom", 2 : "left", 3 : "right"),
+    "bottom" : (1 : "top", 2 : "left", 3 : "right"),
+    "left" : (1 : "bottom", 2 : "top", 3 : "right"),
+    "right" : (1 : "bottom", 2 : "left", 3 : "top"),
+);
+
+@mixin create-v-border($location, $color)
+{
+  @if ($location == "t")
+  {
+    border-bottom-color : $color;
+  } @else if ($location == "b")
+  {
+    border-top-color    : $color;
+  } @else if ($location == "r")
+  {
+    border-left-color   : $color;
+  } @else //it's located on the left so handle it appropriately
+  {
+    border-right-color  : $color;
+  }
+}
+
+@mixin triangle-set-up{
+  &::before, &::after
+  {
+    //rules here
+    content      : "";
+    position     : absolute;
+    width        : 0;
+    height       : 0;
+    border-style : solid;
+    border-width : 10px;
+    border-color : transparent;
+  }
+}
+
+//@mixin create-rules($num-list, $positions-list, $unit)
+@mixin create-rules($num-list, $pos, $unit)
+{
+  @if ($unit == "%")
+  {
+    @each $num in $num-list
+    {
+      &#{$pos}-#{$num}p
+      {
+        @include triangle-set-up;
+
+        &::before
+        {
+          @if ($pos == "t")
+          {
+            top    : -20px;
+            left   : #{$num}#{$unit};
+          } @else if ($pos == "b")
+          {
+            bottom : -20px;
+            left   : #{$num}#{$unit};
+          } @else if ($pos == "r")
+          {
+            right  : -20px;
+            top    : #{$num}#{$unit};
+          } @else //it's located on the left so handle it appropriately
+          {
+            left   : -20px;
+            top    : #{$num}#{$unit};
+          }
+
+          @include create-v-border($pos, #ffcf02)
+        }
+
+        //&::after
+        //{
+        //  top: -10px;
+        //  left: #{$num}#{$unit};
+        //  @include create-v-border($pos, #ffcf02)
+        //}
+      }
+    }
+  } @else
+  {
+    @each $num in $num-list
+    {
+      &#{$pos}-#{$num}
+      {
+        @include triangle-set-up;
+
+        &::before
+        {
+          @if ($pos == "t")
+          {
+            top    : -20px;
+            left   : #{$num}#{$unit};
+          } @else if ($pos == "b")
+          {
+            bottom : -20px;
+            left   : #{$num}#{$unit};
+          } @else if ($pos == "r")
+          {
+            right  : -20px;
+            top    : #{$num}#{$unit};
+          } @else //it's located on the left so handle it appropriately
+          {
+            left   : -20px;
+            top    : #{$num}#{$unit};
+          }
+
+          //left : #{$num}#{$unit};
+          @include create-v-border($pos, #ffcf02)
+        }
+
+        //&::after
+        //{
+        //  top: -10px;
+        //  left: #{$num}#{$unit};
+        //  @include create-v-border($pos, #ffcf02)
+        //}
+      }
+    }
+  }
+  &#{$pos}-#{'ctr'}
+  {
+    @include triangle-set-up;
+
+    &::before
+    {
+      @if ($pos == "t")
+      {
+        top    : -20px;
+        left   : calc(50% - 10px);
+      } @else if ($pos == "b")
+      {
+        bottom : -20px;
+        left   : calc(50% - 10px);
+      } @else if ($pos == "r")
+      {
+        right  : -20px;
+        top    : calc(50% - 10px);
+      } @else //it's located on the left so handle it appropriately
+      {
+        left   : -20px;
+        top    : calc(50% - 10px);
+      }
+
+      //left : #{$num}#{$unit};
+      @include create-v-border($pos, #ffcf02)
+    }
+  }
+}
+
+//creating equilateral triangles
+.tri-
+{
+  @each $pos, $rule-key in $positions
+  {
+    @include create-rules($nums-list, $pos, "px")
+  }
+  @each $pos, $rule-key in $positions
+  {
+    @include create-rules($nums-list, $pos, "%")
+  }
+}
+
+//creating right-angled triangles
