@@ -178,7 +178,7 @@ function ListingCard() {
 ```
 
 ```css
-/* ListingCard.css */
+src
 .ListingCard { }
 .ListingCard--featured { }
 .ListingCard__title { }
