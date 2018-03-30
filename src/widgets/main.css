@@ -33,19 +33,19 @@
 @font-face
 {
   font-family: "Segoe UI";
-  src: url('../fonts/SEGOEUI.TTF') format('truetype');
+  src: url('../../fonts/SEGOEUI.TTF') format('truetype');
 }
 
 @font-face
 {
   font-family: "Sertig";
-  src: url("../fonts/Sertig.otf");
+  src: url("../../fonts/Sertig.otf");
 }
 
 @font-face
 {
   font-family: "segoe mdl2 Assets";
-  src: url("../fonts/segmdl2.ttf");
+  src: url("../../fonts/segmdl2.ttf");
 }
 
 *
@@ -184,7 +184,7 @@ overflow:hidden;
 width: 15px;
 height: 29px;
 float: right;
-background-image: url("images/spinner.png");
+background-image: url("../images/spinner.png");
 margin-top: -27px;
 background-repeat: no-repeat;
 padding-left: 2px;

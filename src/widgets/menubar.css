@@ -331,7 +331,7 @@ p, h1, h3, div, section
 
 #menuBar li span.iconItem
 {
-  background-image: url("/images/editIcosSprite.png");
+  background-image: url("/src/images/editIcosSprite.png");
   background-size: cover;
   background-repeat: no-repeat;
   width: 25px;
@@ -352,7 +352,7 @@ p, h1, h3, div, section
 
 #menuBar li span.commandIcon /*imhere fixme*/
 {
-  background-image: url("/images/commandIcons.png") !important;
+  background-image: url("/src/images/commandIcons.png") !important;
 }
 
 #menuBar li span.iconItem input
@@ -574,7 +574,7 @@ margin-left: 2px;
 /*region icons and dividers*/
 #menus .rightChevron
 {
-  background-image: url("/images/rChevron.png");
+  background-image: url("/src/images/rChevron.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right 0;
@@ -585,7 +585,7 @@ margin-left: 2px;
 
 #menuBar .dChevron
 {
-  background-image: url("/images/dChevron2.png");
+  background-image: url("/src/images/dChevron2.png");
   /*background-size: contain;*/
   background-repeat: no-repeat;
   /*background-position: 100% 8px;*/
@@ -601,7 +601,7 @@ margin-left: 2px;
 
 #menuBar li span.toolBoxIconItem
 {
-  background-image: url("/images/toolBoxSprite.png") !important;
+  background-image: url("/src/images/toolBoxSprite.png") !important;
   background-size: 300px;
 }
 
@@ -744,7 +744,7 @@ margin-left: 2px;
 #menuBar span.svgIcon
 {
   /*background-size: auto;*/
-  background-image: url("/images/svg/svgIcoSprite.svg");
+  background-image: url("/src/images/svg/svgIcoSprite.svg");
   background-size: 300px;
   background-repeat: no-repeat;
   width: 25px;
@@ -763,39 +763,39 @@ margin-left: 2px;
 
 .imgCBut
 {
-  background-image: url("/images/svg/cropper.svg");
+  background-image: url("/src/images/svg/cropper.svg");
   /*background-size: 15px !important;*/
   background-position-x: -32px;
 }
 
 .fullProfile
 {
-  background-image: url("/images/svg/profile.svg");
+  background-image: url("/src/images/svg/profile.svg");
   /*background-size: 15px !important;*/
   background-position-x: -112px;
 }
 
 .logOutIcon
 {
-  background-image: url("/images/svg/lock.svg");
+  background-image: url("/src/images/svg/lock.svg");
   background-position-x: -189px;
 }
 
 .notificationsIcon
 {
-  background-image: url("/images/svg/notifyme.svg");
+  background-image: url("/src/images/svg/notifyme.svg");
   background-position-x: -84px;
 }
 
 .consolidateIcon
 {
-  background-image: url("/images/svg/myunity.svg");
+  background-image: url("/src/images/svg/myunity.svg");
   background-position-x: -59px;
 }
 
 .prefIcon
 {
-  background-image: url("/images/svg/preferences.svg");
+  background-image: url("/src/images/svg/preferences.svg");
   background-position-x: -166px;
 }
 
@@ -928,7 +928,7 @@ label.containerLable
 
 .seeMsgNotifications
 {
-  background-image: url("/images/svg/notification.svg.png");
+  background-image: url("/src/images/svg/notification.svg.png");
   background-repeat: no-repeat;
   background-position: center;
   /*background-size: 70%;*/

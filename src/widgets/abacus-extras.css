@@ -33,7 +33,7 @@
 /*endregion*/
 /*region specifics msg has to be removed*/
 .commandIcon {
-  background-image: url("images/toolBoxSprite.png");
+  background-image: url("../images/toolBoxSprite.png");
   background-repeat: no-repeat !important;
   background-size: 300px;
   /*background-position-y:center  !important;*/
@@ -43,24 +43,24 @@
 
 /*TODO white icons*/
 #menuBar li span.commandIcon.tbIs1, span.commandIcon.tbIs1, .tbIs1 {
-  background-image: url("images/toolBoxSprite.png") !important;
+  background-image: url("../images/toolBoxSprite.png") !important;
   background-repeat: no-repeat !important;
   background-size: 300px; }
 
 .commandIcon.tbIs2, #menuBar li span.commandIcon.tbIs2, .tbIs2 {
-  background-image: url("images/toolBoxSpriteN2.png") !important;
+  background-image: url("../images/toolBoxSpriteN2.png") !important;
   background-size: 500px; }
 
 .commandIcon.tbIs3, #menuBar li span.commandIcon.tbIs3, .tbIs3 {
-  background-image: url("images/toolBoxSpriteN3.png") !important;
+  background-image: url("../images/toolBoxSpriteN3.png") !important;
   background-size: 350px; }
 
 .commandIcon.tbIs4, #menuBar li span.commandIcon.tbIs4, .tbIs4 {
-  background-image: url("images/toolBoxSpriteN4.png") !important;
+  background-image: url("../images/toolBoxSpriteN4.png") !important;
   background-size: 500px; }
 
 .commandIcon.finIs, #menuBar li span.commandIcon.finIs {
-  background-image: url("images/finance.png") !important;
+  background-image: url("../images/finance.png") !important;
   background-size: 500px; }
 
 #toolBox .smdl {
@@ -68,7 +68,7 @@
 
 #toolBox span.svgIcon, #toolBox ul li ul li span.svgIcon {
   /*background-size: auto;*/
-  background-image: url("images/svg/svgIcoSprite.svg");
+  background-image: url("../images/svg/svgIcoSprite.svg");
   background-size: 300px;
   background-repeat: no-repeat;
   width: 25px;
@@ -120,7 +120,7 @@
   width: 25px;
   height: 20px;
   margin-right: 5px;
-  background-image: url("images/tabIs.png");
+  background-image: url("../images/tabIs.png");
   background-position: -47px -11px;
   background-size: 350px;
   vertical-align: text-bottom; }
@@ -139,4 +139,4 @@
 
 /*endregion*/
 
-/*# sourceMappingURL=abacus-extras.src.map */
+/*# sourceMappingURL=abacus-extras.css.map */
