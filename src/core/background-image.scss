@@ -1,0 +1,182 @@
+//region background repeat
+$bg-and-mask : (
+    "bg-" : "background",
+    "mask-" : "mask");
+
+$repeat-mods : (
+    r : repeat,
+    ry : repeat-y,
+    rx : repeat-x,
+    nr : no-repeat
+);
+
+@mixin makeBgAndMaskRules($rule-c, $mods)
+{
+  @each $class, $rule-key in $bg-and-mask
+  {
+    @each $mod-key, $mod-value in $mods
+    {
+      #{"."}#{$class}#{$mod-key}
+      {
+        #{$rule-key}#{$rule-c}: #{$mod-value};
+      }
+    }
+  }
+}
+
+@include makeBgAndMaskRules("-repeat", $repeat-mods);
+
+//endregion
+
+//region background size
+
+$nums : 0, 1, 2, 3, 4, 5, 8, 9, 10, 12, 15, 20, 25, 30, 35, 40, 45, 50, 51, 52, 53, 54, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100;
+
+@mixin create-rules($list, $unit, $rule-c)
+{
+  @if ($unit == "%")
+  {
+    @each $num in $list
+    {
+      &#{"-"}#{$num}p
+      {
+        -webkit-#{$rule-c}-size : #{$num}#{$unit};
+        #{$rule-c}-size         : #{$num}#{$unit};
+      }
+    }
+  } @else
+  {
+    @each $num in $list
+    {
+      &#{"-"}#{$num}
+      {
+        -webkit-#{$rule-c}-size : #{$num}#{$unit};
+        #{$rule-c}-size         : #{$num}#{$unit};
+      }
+    }
+  }
+}
+
+.bgs
+{
+  @include create-rules($nums, "%", "background");
+  @include create-rules($nums, "px", "background");
+
+  &-cov
+  {
+    -webkit-background-size : cover; background-size : cover;
+  }
+  &-con
+  {
+    -webkit-background-size : contain; background-size : contain;
+  }
+}
+
+.mask-s
+{
+  @include create-rules($nums, "%", "mask");
+  @include create-rules($nums, "px", "mask");
+}
+
+//endregion
+
+//region background attachment
+.bga
+{
+  &-f
+  {
+    background-attachment : fixed;
+  }
+  &-s
+  {
+    background-attachment : scroll;
+  }
+  &-l
+  {
+    background-attachment : local;
+  }
+}
+
+//endregion
+
+//region background position
+
+@mixin create-rules($list, $rule-key, $unit, $rule-c)
+{
+  @if ($unit == "%")
+  {
+    @each $num in $list
+    {
+      &#{$num}p
+      {
+        $value : if($rule-c == "", #{$num}#{$unit}, "");
+        #{$rule-key}-position#{$rule-c} : #{$num}#{$unit} #{$value};
+
+        @if ($rule-c != "")
+        {
+          -ms-#{$rule-key}-position#{$rule-c} : #{$num}#{$unit} #{$value};
+        }
+      }
+    }
+  } @else
+  {
+    @each $num in $list
+    {
+      &#{$num}
+      {
+        $value : if($rule-c == "", #{$num}#{$unit}, "");
+        #{$rule-key}-position#{$rule-c} : #{$num}#{$unit} #{$value};
+
+        @if ($rule-c != "")
+        {
+          -ms-#{$rule-key}-position#{$rule-c} : #{$num}#{$unit} #{$value};
+        }
+      }
+    }
+  }
+}
+
+$rule-keys : "background-position",
+"background-position-x",
+"background-position-y";
+
+$bg-and-mask : (
+    "bg" : "background",
+    "mask-" : "mask");
+
+//.bg
+//{
+@each $class, $rule-key in $bg-and-mask
+{
+  #{"."}#{$class}p
+  {
+    &-center, &-ctr
+    {
+      #{$rule-key}-position : center center;
+    }
+    @include create-rules($nums, #{$rule-key}, "px", "");
+    @include create-rules($nums, #{$rule-key}, "%", "");
+
+    &-x-
+    {
+      &center, &-ctr
+      {
+        #{$rule-key}-position-x : center;
+      }
+      @include create-rules($nums, #{$rule-key}, "px", "-x");
+      @include create-rules($nums, #{$rule-key}, "%", "-x");
+    }
+
+    &-y-
+    {
+      &center, &-ctr
+      {
+        #{$rule-key}-position-y : center;
+      }
+      @include create-rules($nums, #{$rule-key}, "px", "-y");
+      @include create-rules($nums, #{$rule-key}, "%", "-y");
+    }
+  }
+}
+
+//endregion

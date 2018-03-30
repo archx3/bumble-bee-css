@@ -1,0 +1,100 @@
+$border-color-pri: var(--dividerColor);
+
+@mixin create($rule, $list)
+{
+  @each $num in $list
+  {
+    &#{$num}
+    {
+      @if ($num == "")
+      {
+        #{$rule}: 1px solid $border-color-pri;
+      } @else
+      {
+        #{$rule}: #{$num}px solid $border-color-pri;
+      }
+    }
+  }
+}
+
+.b
+{
+  $nums: "", 0, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+  $border-positions: (
+      "b" : "border-bottom",
+      "t" : "border-top",
+      "l" : "border-left",
+      "r" : "border-right");
+
+  &dr
+  {
+
+    @include create("border", $nums);
+  }
+
+  @each $pos, $value in $border-positions
+  {
+    &#{$pos}
+    {
+      @include create($value, $nums);
+    }
+  }
+
+}
+
+@mixin create-radius-rules($list, $rule-key, $unit)
+{
+  @each $num in $list
+  {
+    @if ($unit == "%")
+    {
+      &#{$num}p
+      {
+        #{$rule-key}: #{$num}#{$unit};
+      }
+    }
+    @else if($unit == "px")
+    {
+      &#{$num}
+      {
+        #{$rule-key}: #{$num}#{$unit};
+      }
+    }
+    @else
+    {
+      &#{$unit}#{$num}
+      {
+        #{$rule-key}: #{$num}px;
+      }
+    }
+  }
+}
+
+.rc //rounded conners
+{
+  $nums: 1, 2, 5, 10, 15, 20, 25, 50, 75;
+  @include create-radius-rules($nums, "border-radius", "%");
+
+  &
+  {
+    border-radius: 2px;
+  }
+
+  $nums: 0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 18, 15, 20, 22, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100;
+  @include create-radius-rules($nums, "border-radius", "px");
+
+  $radius-resets : (
+      "tl" : "border-top-left-radius",
+      "tr" : "border-top-right-radius",
+      "bl" : "border-bottom-left-radius",
+      "br" : "border-bottom-right-radius");
+
+  @each $item, $value in $radius-resets{
+    @include create-radius-rules($nums, $value, $item);
+  }
+}
+
+.circle
+{
+  border-radius: 50%;
+}

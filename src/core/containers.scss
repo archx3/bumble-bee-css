@@ -1,0 +1,332 @@
+/*region rows and cols*/
+$spacing-pc-age : "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25;
+
+$rc : "row", "col";
+$nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
+
+@mixin create-rows-and-cols()
+{
+  @each $dir in $rc
+  {
+    @each $num in $nums
+    {
+      @each $spacing in $spacing-pc-age
+      {
+        @if ($spacing == "")
+        {
+          @if ($dir == "col")
+          {
+            .#{$dir}
+            {
+              width   : 100%/$num;
+              display : inline-block;
+              float   : left;
+            }
+          }
+          @if ($dir == "row")
+          {
+            .#{$dir}
+            {
+              height  : 100%/$num;
+              display : block;
+            }
+          }
+        } @else
+        {
+          @if ($dir == "col")
+          {
+            .#{$dir}-#{$num}-#{$spacing}
+            {
+              width        : (100%/$num) - $spacing;
+              display      : inline-block;
+              float        : left;
+              margin-left  : #{$spacing/2}#{'%'};
+              margin-right : #{$spacing/2}#{'%'};
+            }
+            .#{$dir}-#{$num}-#{$spacing}-#{'no-fl'}
+            {
+              width        : (100%/$num) - $spacing;
+              margin-left  : #{$spacing/2}#{'%'};
+              margin-right : #{$spacing/2}#{'%'};
+            }
+
+            .#{$dir}-#{$num}-#{$spacing}:first-of-type
+            {
+              margin-left : 0;
+            }
+
+            .#{$dir}-#{$num}-#{$spacing}:last-of-type
+            {
+              margin-right : 0;
+            }
+          }
+
+          @if ($dir == "row")
+          {
+            .#{$dir}-#{$num}-#{$spacing}
+            {
+              height        : 100%/$num - $spacing;
+              display       : block;
+              margin-top    : #{$spacing/2}#{'%'};
+              margin-bottom : #{$spacing/2}#{'%'};
+            }
+
+            //.#{$dir}-#{$num}-#{$spacing}:first-of-type
+            //{
+            //  //margin-top : 0;
+            //}
+            //
+            //.#{$dir}-#{$num}-#{$spacing}:last-of-type
+            //{
+            //  margin-bottom : 0;
+            //}
+          }
+        }
+      }
+    }
+  }
+}
+
+@include create-rows-and-cols();
+
+.flex
+{
+  &#{'-container'}
+  {
+    -webkit-box-pack        : start;
+    -webkit-justify-content : flex-start;
+    justify-content         : flex-start;
+    display                 : flex;
+    flex-wrap               : wrap;
+
+    & > *
+    {
+      //display: flex;
+    }
+  }
+
+  &#{'-cols'}
+  {
+    -webkit-box-pack        : start;
+    -webkit-justify-content : flex-start;
+    justify-content         : flex-start;
+    display                 : flex;
+
+    & > *
+    {
+      //display: flex;
+    }
+  }
+
+  @each $spacing in $spacing-pc-age
+  {
+    @if ($spacing != "")
+    {
+      &#{'-cols'}_#{$spacing}
+      {
+        -webkit-box-pack        : start;
+        -webkit-justify-content : flex-start;
+        justify-content         : flex-start;
+        //display                 : flex;
+
+        &._iblk
+        {
+          & > *
+          {
+            display: inline-block;
+          }
+        }
+
+        & > *
+        {
+          margin-left  : #{$spacing/2}#{'%'};
+          margin-right : #{$spacing/2}#{'%'};
+
+          &._pd{
+            margin-left  : 0;
+            margin-right : 0;
+
+            padding-left  : #{$spacing/2}#{'%'};
+            padding-right : #{$spacing/2}#{'%'};
+          }
+
+        }
+      }
+    }
+  }
+
+  @each $num in $nums
+  {
+    @each $spacing in $spacing-pc-age
+    {
+      @if ($spacing != "")
+      {
+        &#{'-container'}-#{$num}-#{$spacing}
+        {
+          -webkit-box-pack        : start;
+          -webkit-justify-content : flex-start;
+          justify-content         : flex-start;
+          display                 : flex;
+          flex-wrap               : wrap;
+
+          & > *
+          {
+            width        : (100%/$num) - $spacing;
+            margin-left  : #{$spacing/2}#{'%'};
+            margin-right : #{$spacing/2}#{'%'};
+
+            &._pd{
+              margin-left  : 0;
+              margin-right : 0;
+
+              padding-left  : #{$spacing/2}#{'%'};
+              padding-right : #{$spacing/2}#{'%'};
+            }
+          }
+
+        }
+
+        &#{'-cols'}-#{$num}-#{$spacing}
+        {
+          -webkit-box-pack        : start;
+          -webkit-justify-content : flex-start;
+          justify-content         : flex-start;
+          display                 : flex;
+
+          & > *
+          {
+            width        : (100%/$num) - $spacing;
+            margin-left  : #{$spacing/2}#{'%'};
+            margin-right : #{$spacing/2}#{'%'};
+
+            &._pd{
+              margin-left  : 0;
+              margin-right : 0;
+
+              padding-left  : #{$spacing/2}#{'%'};
+              padding-right : #{$spacing/2}#{'%'};
+            }
+            /*&:first-of-type
+            {
+              margin-left : 0;
+            }
+
+            &:last-of-type
+            {
+              margin-right : 0;
+            }*/
+          }
+        }
+
+        &#{'-rows'}-#{$num}-#{$spacing}
+        {
+          -webkit-box-pack        : start;
+          -webkit-justify-content : flex-start;
+          justify-content         : flex-start;
+          display                 : flex;
+          flex-wrap               : wrap;
+
+          & > *
+          {
+            height        : (100%/$num) - $spacing;
+            margin-top  : #{$spacing/2}#{'%'};
+            margin-bottom : #{$spacing/2}#{'%'};
+
+            &._pd{
+              margin-top  : 0;
+              margin-bottom : 0;
+
+              padding-top  : #{$spacing/2}#{'%'};
+              padding-bottom : #{$spacing/2}#{'%'};
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.col-2:first-of-type
+{
+  padding-right : 5px;
+}
+
+.col-2:last-of-type
+{
+  padding-left : 5px;
+}
+
+.col-3
+{
+  width   : 33.33333333%;
+  display : inline-block;
+  float   : left;
+}
+
+.col-4
+{
+  width   : 25%;
+  display : inline-block;
+  float   : left;
+}
+
+.row-2
+{
+  height  : 50%;
+  display : block;
+}
+
+.row-3
+{
+  height  : 33.33333333%;
+  display : block;
+}
+
+.row-4
+{
+  height  : 25%;
+  display : block;
+}
+
+/*region aspect ratio, Heavily influenced by tuts on www.w3schools.com/howto*/
+.a1x1 .container /* 1:1 Aspect Ratio */
+{
+  //background-color : red;
+  width            : 100%;
+  padding-top      : 100%;
+  position         : relative; /* If you want text inside of it */
+}
+
+.a1x1 .text
+{
+  /* If you want text inside of the container */
+  position : absolute;
+  top      : 0;
+  left     : 0;
+  bottom   : 0;
+  right    : 0;
+}
+
+.a16x9.container
+{
+  padding-top : 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.a16x3.container
+{
+  padding-top : 75%; /* 4:3 Aspect Ratio */
+}
+
+.a3x2.container
+{
+  padding-top : 66.66%; /* 3:2 Aspect Ratio */
+}
+
+.a8x5.container
+{
+  padding-top : 62.5%; /* 8:5 Aspect Ratio */
+}
+
+/*endregion*/
