@@ -1,5 +1,31 @@
+<p align="center">
+  <a href="https://getbootstrap.com/">
+    <img src="https://lh6.googleusercontent.com/4d9oIKqSnzW0em1F9HNlOrUQ-sCK2ScALccfLLZnT_HaIHpVJHWjqohn4w-5ldSZ5yIaIJLK-xbFoRp7moBa0mOIEwxZD5tAJlksgEcACbsxv1_AOVwcdDhnJd1TWJ99tICHp6MD" alt="" width=100 height=100>
+  </a>
 
-# Bumble-bee-css
+  <h3 align="center">Bumble-bee-css</h3>
+
+  <p align="center">
+    Sleek, intuitive, and powerful front-end framework for faster and easier web development.
+    <br>
+    <a href="#"><strong>See The Bumble-bee CSS (Bee CSS) docs here »</strong></a>
+    <br>
+    <br>
+    <a href="#">Report bug</a>
+    ·
+    <a href="https://github.com/archX3/bumble-bee-css/issues/new?template=feature.md&labels=feature">Request feature</a>
+    ·
+<!--     <a href="https://themes.getbootstrap.com/">Themes</a> -->
+    ·
+<!--     <a href="https://jobs.getbootstrap.com/">Jobs</a> -->
+    ·
+<!--     <a href="https://blog.getbootstrap.com/">Blog</a> -->
+  </p>
+</p>
+
+<br>
+
+# 
 Bumble-bee CSS is a minimalist CSS framework that can be integrated at any stage in a project life
 to reduce custom rewrtiting of CSS for web and mobile web projects
 It has responsiveness already built-in and is absolutely free to use
