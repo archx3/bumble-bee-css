@@ -1,0 +1,164 @@
+/*text-transform: none;*/
+/*color: #7cb5ec;*/
+
+
+.smdl
+{
+  font-family: "segoe mdl2 Assets", sans-serif;
+  vertical-align: text-bottom;
+  pointer-events: none;
+}
+
+.thinMdl
+{
+  font-weight: 400;
+}
+
+.al /*align left*/
+{
+  text-align: left;
+}
+
+.ar /*align right*/
+{
+  text-align: right;
+}
+
+/*align center*/
+.ac, .center
+{
+  text-align: center;
+}
+
+.ctr
+{
+  text-align: center !important;
+}
+
+.lc /*lower case*/
+{
+  text-transform: lowercase;
+}
+
+.uc /*upper case*/
+{
+  text-transform: uppercase;
+}
+
+.ucf /*upper case first letter*/
+{
+  /*text-transform: uppercase;*/
+}
+
+.tc, .capitalise /*title case*/
+{
+  text-transform: capitalize;
+}
+
+.fs-sm
+{
+  font-size: small;
+}
+
+.fs-md
+{
+  font-size: medium;
+}
+
+.fs-lg
+{
+  font-size: large;
+}
+
+$nums : 3, 4, 5, 6, 7, 8, 9;
+
+.bld
+{
+  font-weight: 600;
+
+  @each $num in $nums
+  {
+    &#{$num}
+    {
+      font-weight: #{$num}#{0}#{0};
+    }
+  }
+}
+
+$nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+
+.ltsp
+{
+  @each $num in $nums
+  {
+    &#{$num}
+    {
+      letter-spacing: #{$num}px;
+    }
+  }
+}
+
+.lh{
+  $nums : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 25, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 52, 54, 55, 58, 60, 62, 64, 65, 68, 70;
+
+  &0
+  {
+    line-height : 0;
+  }
+
+  @each $num in $nums
+  {
+    &#{$num}
+    {
+      //$value : if($num < 10, $num / 10, $num / 100);
+      line-height : #{ $num / 10};
+    }
+  }
+}
+
+$nums : 4, 5, 6, 9, 10, 11, 12, 14, 16, 15, 18, 20, 22, 24, 25, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 55, 58, 60, 62, 64, 65, 68, 70;
+
+.fts
+{
+  @each $num in $nums
+  {
+    &#{$num}
+    {
+      font-size: #{$num}px;
+    }
+  }
+}
+
+$transforms : (
+    "u" : "uppercase"
+);
+
+.t{
+  &t{
+
+    &-n{
+      text-transform: none;
+    }
+  }
+
+  &d{
+    &-u{
+      text-decoration: underline;
+    }
+    &-i{
+      text-decoration: underline;
+    }
+    &-b{
+      text-decoration: blink;
+    }
+  }
+}
+
+
+.ellipsify
+{
+  text-overflow: ellipsis;
+  overflow-wrap: normal;
+  overflow: hidden;
+  white-space: nowrap;
+}
