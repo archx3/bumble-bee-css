@@ -1,8 +1,13 @@
+///@author Kobina Koomson G.
+
 //region background repeat
+
+///
 $bg-and-mask : (
     "bg-" : "background",
     "mask-" : "mask");
 
+///
 $repeat-mods : (
     r : repeat,
     ry : repeat-y,
@@ -10,6 +15,10 @@ $repeat-mods : (
     nr : no-repeat
 );
 
+///This function creates classes and accompanying rules that are applicable to
+/// the background-image and and mask properties
+///@param rule-c {String} the string to attach to the background or mask prefix e.g '-repeat' [generated-key]
+///@param mods {Dictionary<String>} the variations of the value that the generated key accepts
 @mixin makeBgAndMaskRules($rule-c, $mods)
 {
   @each $class, $rule-key in $bg-and-mask
@@ -24,14 +33,19 @@ $repeat-mods : (
   }
 }
 
+/// make background and make repetition classes amd rule sets
 @include makeBgAndMaskRules("-repeat", $repeat-mods);
 
 //endregion
 
 //region background size
 
-$nums : 0, 1, 2, 3, 4, 5, 8, 9, 10, 12, 15, 20, 25, 30, 35, 40, 45, 50, 51, 52, 53, 54, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100;
+$nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100;
 
+///Method for creates background and mask size classes and rules
+///@param list {list<number>} The list of numbers for which classes and rules shd be generated
+///@param unit {String} The unit of measurement e.g "px"
+///@param rule-c {String} The rule class [the key prefix in this case, NOT vendor prefix]
 @mixin create-rules($list, $unit, $rule-c)
 {
   @if ($unit == "%")
@@ -81,6 +95,7 @@ $nums : 0, 1, 2, 3, 4, 5, 8, 9, 10, 12, 15, 20, 25, 30, 35, 40, 45, 50, 51, 52, 
 //endregion
 
 //region background attachment
+///create background attachment rules
 .bga
 {
   &-f
@@ -100,14 +115,18 @@ $nums : 0, 1, 2, 3, 4, 5, 8, 9, 10, 12, 15, 20, 25, 30, 35, 40, 45, 50, 51, 52, 
 //endregion
 
 //region background position
-
+///This method generates class names and rules for background position
+///Append a 'p' to the class name if the unit is '%'
+///@param list {list<number>} the list of numbers for which classes should be generated
+///@param rule-key {String} The css rule key to be used in rule generation
+///@param unit {String} The unit of measurement
 @mixin create-rules($list, $rule-key, $unit, $rule-c)
 {
   @if ($unit == "%")
   {
     @each $num in $list
     {
-      &#{$num}p
+      &#{$num}p //
       {
         $value : if($rule-c == "", #{$num}#{$unit}, "");
         #{$rule-key}-position#{$rule-c} : #{$num}#{$unit} #{$value};
