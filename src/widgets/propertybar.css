@@ -51,7 +51,7 @@
 
 #propertyBar .longSearchBar
 {
-  background-image: url('/images/searchicon.png'); /* Add a search icon to input */
+  background-image: url('/src/images/searchicon.png'); /* Add a search icon to input */
   background-position: 9px 7px;
   background-repeat: no-repeat;
   background-size: 14px;

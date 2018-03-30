@@ -154,7 +154,7 @@
 
 #ctxMenu li .iconItem
 {
-    background-image: url("images/editIcosSprite.png");
+    background-image: url("../images/editIcosSprite.png");
     background-size: cover;
     background-repeat: no-repeat;
     width: 25px;
