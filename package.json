@@ -1,11 +1,29 @@
 {
   "name": "bumblebee-css",
   "version": "1.2.2",
-
   "description": "",
-  "keywords": ["css", "framework", "lightwieght"],
-  "files": ["build", "dist",  "demos", "src", "fonts", "README.md", "package.json"],
+  "keywords": [
+    "css",
+    "framework",
+    "lightwieght"
+  ],
+  "files": [
+    "build",
+    "dist",
+    "demos",
+    "src",
+    "fonts",
+    "README.md",
+    "package.json"
+  ],
   "homepage": "",
   "bugs": "",
-  "license": ""
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "sassdoc": "^2.5.0"
+  },
+  "dependencies": {
+    "gulp-sass": "^3.2.1"
+  }
 }
