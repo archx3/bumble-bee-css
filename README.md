@@ -6,7 +6,12 @@
   <h3 align="center">Bumble-bee-css</h3>
 
   <p align="center">
-    Sleek, intuitive, and powerful front-end framework for faster and easier web development.
+    Sleek,  and powerful front-end framework .
+    <br>
+    ·Minimalist, ·Powerful, ·Intuitive, CSS framework for faster and easier web development<br>·Can be integrated at any stage in a project.
+    <br>
+    Responsive at heart · absolutely free to use
+    To theme your app you may make use of the colors.scss file and recompile the sass package
     <br>
     <a href="#"><strong>See The Bumble-bee CSS (Bee CSS) docs here »</strong></a>
     <br>
@@ -14,29 +19,30 @@
     <a href="#">Report bug</a>
     ·
     <a href="https://github.com/archX3/bumble-bee-css/issues/new?template=feature.md&labels=feature">Request feature</a>
-    ·
-<!--     <a href="https://themes.getbootstrap.com/">Themes</a> -->
-    ·
-<!--     <a href="https://jobs.getbootstrap.com/">Jobs</a> -->
-    ·
-<!--     <a href="https://blog.getbootstrap.com/">Blog</a> -->
+    
+<!-- ·    <a href="https://themes.getbootstrap.com/">Themes</a> -->
+    
+<!-- ·    <a href="https://jobs.getbootstrap.com/">Jobs</a> -->
+    
+<!-- ·    <a href="https://blog.getbootstrap.com/">Blog</a> -->
   </p>
 </p>
 
 <br>
+ 
 
-# 
-Bumble-bee CSS is a minimalist CSS framework that can be integrated at any stage in a project life
-to reduce custom rewrtiting of CSS for web and mobile web projects
-It has responsiveness already built-in and is absolutely free to use
+## Bugs and feature requests
 
-To theme your app you may make use of the colors.scss file and recompile the sass package
+Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/archX3/bumble-bee-css/blob/master/.github/CONTRIBUTING.md) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/twbs/bootstrap/issues/new).
+
+
+## Documentation
+
+Bee CSS's documentation, included in this repo in the root/docs, is built with [ScssDoc](http://sassdoc.com/) and publicly hosted on GitHub Pages at <https://#/>. The docs may also be run locally.
 
 # CSS / Sass Styleguide
 
 *A mostly reasonable approach to CSS and Sass/SCSS, adapted from the Airbnb CSS style guide*
-
-### CONTRIBUTORS ARE WELCOME
 
 ## Table of Contents
 
