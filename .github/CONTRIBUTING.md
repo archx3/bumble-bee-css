@@ -1,8 +1,8 @@
-# Vue.js Contributing Guide
+# Bumble Bee Contributing Guide
 
-Hi! I’m really excited that you are interested in contributing to Bumble-Bee (Bee) Js. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
+Hi! I’m really excited that you are interested in contributing to Bumble-Bee (Bee) CSS. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
 
-- [Code of Conduct](https://github.com/archX3/bumble-bee-js/blob/master/.github/code-of-conduct.md)
+- [Code of Conduct](https://github.com/archX3/bumble-bee-css/blob/master/.github/code-of-conduct.md)
 - [Issue Reporting Guidelines](#issue-reporting-guidelines)
 - [Pull Request Guidelines](#pull-request-guidelines)
 - [Development Setup](#development-setup)
