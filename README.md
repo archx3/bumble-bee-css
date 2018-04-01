@@ -1,16 +1,19 @@
 <p align="center">
   <a href="https://getbootstrap.com/">
-    <img src="https://lh6.googleusercontent.com/4d9oIKqSnzW0em1F9HNlOrUQ-sCK2ScALccfLLZnT_HaIHpVJHWjqohn4w-5ldSZ5yIaIJLK-xbFoRp7moBa0mOIEwxZD5tAJlksgEcACbsxv1_AOVwcdDhnJd1TWJ99tICHp6MD" alt="" width=100 height=100>
+    <img src="https://lh6.googleusercontent.com/4d9oIKqSnzW0em1F9HNlOrUQ-sCK2ScALccfLLZnT_HaIHpVJHWjqohn4w-5ldSZ5yIaIJLK-xbFoRp7moBa0mOIEwxZD5tAJlksgEcACbsxv1_AOVwcdDhnJd1TWJ99tICHp6MD" alt="" width=120 height=120>
   </a>
 
   <h3 align="center">Bumble-bee-css</h3>
 
   <p align="center">
-    Sleek,  and powerful front-end framework .
+    ·Sexy front-end framework·
     <br>
-    ·Minimalist, ·Powerful, ·Intuitive, CSS framework for faster and easier web development<br>·Can be integrated at any stage in a project.
+    ·Minimalist, ·Powerful, ·Intuitive, CSS framework for faster and easier web development
+    <br>
+    ·Can be integrated at any stage in a project.
     <br>
     Responsive at heart · absolutely free to use
+    <br>
     To theme your app you may make use of the colors.scss file and recompile the sass package
     <br>
     <a href="#"><strong>See The Bumble-bee CSS (Bee CSS) docs here »</strong></a>
