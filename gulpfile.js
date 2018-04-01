@@ -27,12 +27,13 @@ gulp.task('coreStyles', function () {
                                display: {
                                   access: ['public', 'private'],
                                   alias: true,
-                                  //watermark: true,
+                                  watermark: true,
                                   shortcutIcon: 'src/images/b-bcss.png',
                                   descriptionPath: 'README.md'
                                },
                                groups: {
                                   'undefined': 'Core',
+                                  'border' : 'Border'
                                },
                                basePath: 'https://github.com/archX3/bumble-bee-css',
                             }));
