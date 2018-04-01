@@ -1,5 +1,12 @@
 $border-color-pri: var(--dividerColor);
 
+///function that creates border classes and border rules
+///<br> e.g .bdr .bdr5
+///<br> bdr is shorthand for "border"
+///<br> class names range from [0, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+///@param rule {String} The rule key
+///@param list {list<num>} the lis of number to generate the class names for
+///@group border
 @mixin create($rule, $list)
 {
   @each $num in $list
@@ -17,6 +24,21 @@ $border-color-pri: var(--dividerColor);
   }
 }
 
+///Border related rules
+///<br> dbr = border
+///<br> t = top
+///<br> l = left
+///<br> b = bottom
+///<br> r = right
+///<br> ".bdr" = border 1px solid {$color}
+///<br> ".bdr{$num}" = border {$num}px solid {$color}
+///<br> bt = border-top
+///<br> bl = border-left
+///<br> bb = border-bottom
+///<br> br = border-right
+///<br> "bdr"classes range from
+///<br> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+///@group border
 .b
 {
   $nums: "", 0, 2, 3, 4, 5, 6, 7, 8, 9, 10;
@@ -42,6 +64,13 @@ $border-color-pri: var(--dividerColor);
 
 }
 
+/// function for generating border radius rules
+/// <br> e.g rc5, rc5p
+///
+///@param list {list<number>}
+///@param rule key {String}
+///@param unit {String} Unit of measurement
+///@group border
 @mixin create-radius-rules($list, $rule-key, $unit)
 {
   @each $num in $list
@@ -70,7 +99,16 @@ $border-color-pri: var(--dividerColor);
   }
 }
 
-.rc //rounded conners
+///Border radius (rounded conners) related rules
+///<br> rc = "round conner"
+///<br> tr = top right
+///<br> tl = top left
+///<br> bl = bottom left
+///<br> br = bottom right
+/// <br> ".rc1" and ".rc1p" classes range from
+/// <br> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+///@group border
+.rc
 {
   $nums: 1, 2, 5, 10, 15, 20, 25, 50, 75;
   @include create-radius-rules($nums, "border-radius", "%");
@@ -81,19 +119,25 @@ $border-color-pri: var(--dividerColor);
   }
 
   $nums: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100;
+
   @include create-radius-rules($nums, "border-radius", "px");
 
   $radius-resets : (
-      "tl" : "border-top-left-radius",
-      "tr" : "border-top-right-radius",
-      "bl" : "border-bottom-left-radius",
-      "br" : "border-bottom-right-radius");
+      "-tl" : "border-top-left-radius",
+      "-tr" : "border-top-right-radius",
+      "-bl" : "border-bottom-left-radius",
+      "-br" : "border-bottom-right-radius");
 
   @each $item, $value in $radius-resets{
     @include create-radius-rules($nums, $value, $item);
   }
 }
 
+/// make an element a circle
+///<br> @alias for .rc50p
+///<br> Requires the element to have equal height and width
+///<br> else the element will become an ellipse
+/// @group border
 .circle
 {
   border-radius: 50%;

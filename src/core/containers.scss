@@ -1,10 +1,14 @@
 /*region rows and cols*/
+///spacing-pc-age
+/// @group containers
 $spacing-pc-age : "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25;
 
+///
 $rc : "row", "col";
 $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
 
-///
+///Creates rows and columns rules and classes
+/// @group containers
 @mixin create-rows-and-cols()
 {
   @each $dir in $rc
@@ -88,8 +92,25 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
   }
 }
 
+///
 @include create-rows-and-cols();
 
+///Flex box based container rules
+///<br> .flex-container
+///<br> .flex-cols
+///<br> .flex-cols_{$spacing [in percentage]} e.g .flex-cols_4
+///<br>
+///<br> .flex-cols-{$number of elements}-{$spacing [in percentage]} e.g .flex-cols-4-2
+///<br> .flex-rows-{$number of elements}-{$spacing [in percentage]} e.g .flex-rows-4-2
+///<br> if the element has additional class name : "_iblk", display style of its children will be set to inline-block
+///<br> if the element's children have additional class name : "_pd", spacing will be done using padding
+///<br> Default spacing style uses margin
+///<br> 
+///<br> .flex-cols-{$number of elements}-{$spacing [in percentage]} e.g .flex-cols-4-2
+///<br> .flex-rows-{$number of elements}-{$spacing [in percentage]} e.g .flex-rows-4-2
+///<br> if the element's children have additional class name : "_pd", spacing will be done using padding
+///<br> Default spacing style uses margin
+/// @group containers
 .flex
 {
   &#{'-container'}
@@ -249,16 +270,19 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
 
 }
 
+/// @group containers
 .col-2:first-of-type
 {
   padding-right : 5px;
 }
 
+/// @group containers
 .col-2:last-of-type
 {
   padding-left : 5px;
 }
 
+/// @group containers
 .col-3
 {
   width   : 33.33333333%;
@@ -266,6 +290,7 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
   float   : left;
 }
 
+/// @group containers
 .col-4
 {
   width   : 25%;
@@ -273,25 +298,29 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
   float   : left;
 }
 
+/// @group containers
 .row-2
 {
   height  : 50%;
   display : block;
 }
 
+/// @group containers
 .row-3
 {
   height  : 33.33333333%;
   display : block;
 }
 
+/// @group containers
 .row-4
 {
   height  : 25%;
   display : block;
 }
 
-/*region aspect ratio, Heavily influenced by tuts on www.w3schools.com/howto*/
+////region aspect ratio, Heavily influenced by tuts on www.w3schools.com/howto
+/// @group containers
 .a1x1 .container /* 1:1 Aspect Ratio */
 {
   //background-color : red;
@@ -300,6 +329,7 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
   position         : relative; /* If you want text inside of it */
 }
 
+/// @group containers
 .a1x1 .text
 {
   /* If you want text inside of the container */
@@ -310,21 +340,25 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
   right    : 0;
 }
 
+/// @group containers
 .a16x9.container
 {
   padding-top : 56.25%; /* 16:9 Aspect Ratio */
 }
 
+/// @group containers
 .a16x3.container
 {
   padding-top : 75%; /* 4:3 Aspect Ratio */
 }
 
+/// @group containers
 .a3x2.container
 {
   padding-top : 66.66%; /* 3:2 Aspect Ratio */
 }
 
+/// @group containers
 .a8x5.container
 {
   padding-top : 62.5%; /* 8:5 Aspect Ratio */

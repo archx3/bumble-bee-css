@@ -1,54 +1,93 @@
+/**
+* SH = shorthand
+* ctr = center
+* v = vertical | vertically
+* h = horizontal | horizontally
+* @group Display and Positioning
+*/
+
+/// values for top, btm, left, right, zi range from
+///[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 25, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 52, 54, 55, 58, 60, 62, 64, 65, 68, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300, 305, 310, 315, 320, 325, 330, 335, 340, 345, 350, 355, 360, 365, 370, 375, 380, 385, 390, 395,  400, 450, 500, 550, 600, 650, 700]
+///@group Display and Positioning
 $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 25, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 52, 54, 55, 58, 60, 62, 64, 65, 68, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300, 305, 310, 315, 320, 325, 330, 335, 340, 345, 350, 355, 360, 365, 370, 375, 380, 385, 390, 395,  400, 450, 500, 550, 600, 650, 700;
 
+///Hides an element
+///@group Display and Positioning
 .hidden, .hide
 {
   display: none;
 }
 
-.centerToDiv
+/// Center an element within it's parent
+/// "ctr" is shorthand for "center", "t" for "to", "p" for "parent"
+///@group Positioning
+.centerToDiv, .ctr-t-p
 {
   margin: 0 auto;
 }
 
+/// For floating an element right
+/// f = float
+/// r = right
+///@group Positioning
 .fr
 {
   float: right !important;
 }
 
+/// For floating an element right
+/// f = float
+/// r = right
+///@group Positioning
 .fl
 {
   float: left !important;
 }
 
+///sets the display property of an element to ruby
+///@group Display
 .ruby{
   display: ruby;
 }
 
+///sets the display property of an element to "inline-block"
+///@group Display
 .inlineBlock, .inline-block, .iblk
 {
   display: inline-block;
 }
 
+///sets the display property of an element to "block"
+///@group Display
 .block, .blk
 {
   display: block;
 }
 
+///sets the position property of an element to "absolute"
+///@group Positioning
 .abs
 {
   position: absolute;
 }
 
+///sets the position property of an element to "relative "
+///@group Positioning
 .rltv
 {
   position: relative;
 }
 
+///sets the position property of an element to "fixed"
+///@group Positioning
 .fxd, .fixed
 {
   position: fixed;
 }
 
+
+///Generating top positioning rules
+///@group Positioning
 .top
 {
   @each $num in $nums{
@@ -67,7 +106,9 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
   }
 }
 
-//bottom
+///Generating bottom positioning rules
+///btm is shorthand for bottom
+///@group Positioning
 .btm{
   @each $num in $nums{
     &#{$num}{
@@ -85,7 +126,8 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
   }
 }
 
-//left
+///Generating left positioning rules
+///@group Positioning
 .left{
   @each $num in $nums{
     &#{$num}{
@@ -103,7 +145,9 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
   }
 }
 
-//right
+///Generating right positioning rules
+///
+///@group Positioning
 .right{
   @each $num in $nums{
     &#{$num}{
@@ -121,6 +165,10 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
   }
 }
 
+///Sets the z-index of an element
+/// e.g zi1 to set a z-index of 1
+///generally .zi{$value}
+///@group Display and Positioning
 .zi{
   @each $num in $nums{
     &#{$num}{
@@ -129,25 +177,44 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
   }
 }
 
+/// Sets the overflow of an element to hidden
+/// Restricts the display of an elements content to the height and width of the element
+///@group Display
 .oh{
   overflow: hidden;
 }
 
+/// makes and element scrollable vertically and horizontally
+/// "y" is shorthand for y-axis
+/// "x" is shorthand for x-axis
+/// "s" is shorthand for scroll
+/// sets overflow x and y to "auto"
+///@group Display
 .scrollable, .scroll, .xys
 {
   overflow: auto;
 }
 
+/// makes and element scrollable vertically
+/// "y" is shorthand for y-axis
+/// "s" is shorthand for scroll
+///@group Display
 .yScroll, .ys
 {
   overflow-y: auto;
 }
 
+/// makes and element scrollable horizontally
+/// "x" is shorthand for x-axis
+/// "s" is shorthand for scroll
+///@group Display
 .xScroll, .xs
 {
   overflow-x: auto;
 }
 
+/// The popular .clearfix that clears the effects of floats on certain elements
+///@group Positioning
 .clearfix
 {
   clear: both;
@@ -157,6 +224,12 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 $ps : 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1;
 $nums : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 
+///Creating opacity classes
+///<br>op is short hand for opacity
+///<br>the number appended is the opacity percentage
+///<br>"opacity" class names range from ".op1" to ".op10"
+///<br> each corresponds to rules in the form "opacity : .6" for the rule ".op6"
+///@group Display
 .op{
   @each $num in $nums
   {
@@ -169,6 +242,19 @@ $nums : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 
 $nums : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 25, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 52, 54, 55, 58, 60, 62, 64, 65, 68, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300, 305, 310, 315, 320, 325, 330, 335, 340, 345, 350, 355, 360, 365, 370, 375, 380, 385, 390, 395,  400, 450, 500, 550, 600, 650, 700;
 
+/// rules for centering elements
+/// <br> ctr is shorthand for center
+/// <br> h and v are for horizontal and vertical respectively
+/// <br> @use .ctr-h to center an element horizontally
+/// <br> @use .ctr-v to center an element vertically
+/// <br> @use .ctr-hv to center an element horizontally vertically
+/// <br> @use .ctr-v5 to center an element horizontally minus 5px
+/// <br> @use .ctr-v5 to center an element vertically minus 5px
+/// <br> @use .ctr-v5_plus to center an element horizontally plus 5px
+/// <br> @use .ctr-v5_plus to center an element vertically plus 5px
+/// <br> the number of pixels to add or subtract from the center positioning ranges from
+/// <br>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 25, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 52, 54, 55, 58, 60, 62, 64, 65, 68, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300, 305, 310, 315, 320, 325, 330, 335, 340, 345, 350, 355, 360, 365, 370, 375, 380, 385, 390, 395,  400, 450, 500, 550, 600, 650, 700]
+///@group Positioning
 .ctr{
   &-h{
     position: absolute;
@@ -183,6 +269,10 @@ $nums : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2
         position: absolute;
         transform: translate(-50%, 0);
         left: calc(50% - #{$num}px);
+
+        &_plus{
+          left: calc(50% + #{$num}px);
+        }
       }
     }
   }
@@ -196,8 +286,12 @@ $nums : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2
       &-#{$num}
       {
         position: absolute;
-        top: calc(50% - #{$num}px);
         transform: translate(0, -50%);
+        top: calc(50% - #{$num}px);
+
+        &_plus{
+          top: calc(50% + #{$num}px);
+        }
       }
     }
   }
@@ -212,14 +306,26 @@ $nums : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2
       &-#{$num}
       {
         position: absolute;
+        transform: translate(-50%, -50%);
         top: calc(50% - #{$num}px);
         left: calc(50% - #{$num}px);
-        transform: translate(-50%, -50%);
+
+        &_plus{
+          top: calc(50% + #{$num}px);
+          left: calc(50% + #{$num}px);
+        }
       }
     }
   }
 }
 
+/// Flex Box based rules for centering elements
+/// <br>ctr is shorthand for center
+/// <br>h and v are for horizontal and vertical respectively
+/// <br>@use .flex-ctr-h to center an element horizontally
+/// <br>@use .flex-ctr-v to center an element vertically
+/// <br>@use .flex-ctr-hv to center an element horizontally and vertically
+///@group Positioning
 .flex-ctr{
   &-h{
     position: absolute;
