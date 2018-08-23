@@ -1,10 +1,11 @@
+///@author Kobina Koomson G.
 ///el = element
 /// @group Height and Width
 
 ///fp = fill parent
 ///<br> Sets the height and width of an el to 100% of of it's parent el
 /// @group Height and Width
-.fillParent, .fp
+.fp
 {
   height: 100%;
   width: 100%;
@@ -13,16 +14,16 @@
 ///fph = fill parent horizontally
 ///<br>
 ///<br> Sets the width of an el to 100% of of it's parent el
-/// @group Height and Width
-.fillParentHorizontal, .fph
+/// @group HnW
+.fph
 {
   width: 100%;
 }
 
 ///fpv = fill parent vertically
 ///<br> Sets the height of an el to 100% of of it's parent el
-/// @group Height and Width
-.fillParentVertical, .fpv
+/// @group HnW
+.fpv
 {
   height: 100%;
 }
@@ -30,8 +31,8 @@
 ///fpv = fill parent horizontally Auto
 ///<br> Sets the width of an el to 100% of of it's parent el
 ///<br> Sets the height of the el to "auto"
-/// @group Height and Width
-.fillParentHorizontalAuto, .fpha
+/// @group HnW
+.fpha
 {
   width: 100%;
   height: auto;
@@ -40,8 +41,8 @@
 ///fpv = fill parent vertically
 ///<br> Sets the height of an el to 100% of of it's parent el
 ///<br> Sets the width of the el to "auto"
-/// @group Height and Width
-.fillParentVerticalAuto, .fpva
+/// @group HnW
+.fpva
 {
   height: 100%;
   width: auto;
@@ -51,18 +52,18 @@
 ///add pixels later
 ///
 $nums: 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 55, 70, 75, 80, 85, 90, 95;
-$classes : 1, 15, 2, 25, 3, 35, 4, 45, 5, 55, 6, 65, 7, 75, 8, 85, 9, 95;
+$classes: 1, 15, 2, 25, 3, 35, 4, 45, 5, 55, 6, 65, 7, 75, 8, 85, 9, 95;
 
 ///horizontal or vertical
-$dimms : 'h', 'v';
-$dimms : (
-    'h' : "width",
-    'v' : "height"
+$dimms: 'h', 'v';
+$dimms: (
+        'h' : "width",
+        'v' : "height"
 );
 
 ///fill Parent classes
 ///<br> fp{$number}  = fill parent{$Percentage}
-///<br> e.g ".fph-05" = fillParent5%
+///<br> e.g ".fph05" = fillParent5%
 ///<br> $number ranges from [05, 1, 15, 2, 25, 3, 35, 4, 45, 5, 55, 6, 65, 7, 75, 8, 85, 9, 95]
 ///<br> if the $number has one digit (e. 2) the $percentage = $number * 10, so 2 = 20
 ///<br> if the $number has two digits (e. 25) the $percentage = $number, so 25 = 25
@@ -74,27 +75,28 @@ $dimms : (
 ///<br> e.g fph7-200 = width : calc(70% - 200px), fph7-200_plus = width : calc(70% + 200px)
 ///<br> $pixels range from :
 ///<br> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 26, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 110, 115, 120, 125, 150, 170, 175, 180, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700]
-/// @group Height and Width
+/// @group HnW
 .fp
 {
-  @each $dimm, $rule-key in $dimms{
+  @each $dimm, $rule-key in $dimms
+  {
 
     &#{$dimm}05
     {
       #{$rule-key}: 5%;
     }
 
-    $i : 1;
+    $i: 1;
     @each $class in $classes
     {
       &#{$dimm}#{$class}
       {
         #{$rule-key}: #{nth($nums, $i)}#{'%'};
       }
-      $i : $i + 1;
+      $i: $i + 1;
     }
 
-    $nums2: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 26, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 110, 115, 120, 125, 150, 170, 175, 180, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700;
+    $nums2: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 26, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 110, 115, 120, 125, 150, 170, 175, 180, 190, 200, 250, 300, 310, 320, 330, 350, 400, 410, 420, 430, 450, 500, 510, 520, 530, 550, 600, 610, 620, 630, 650, 700;
     @each $num in $nums2
     {
       &#{$dimm}-#{$num}
@@ -112,7 +114,7 @@ $dimms : (
         #{$rule-key}: 5%;
       }
 
-      $i : 1;
+      $i: 1;
       @each $class in $classes
       {
         &#{$dimm}#{$class}-#{$num}
@@ -123,7 +125,7 @@ $dimms : (
         {
           #{$rule-key}: calc(#{nth($nums, $i)}#{'%'} + #{$num}#{'px'});
         }
-        $i : $i + 1;
+        $i: $i + 1;
       }
       //endregion
     }
@@ -150,9 +152,11 @@ $dimms : (
 ///<br> e.g h200p = height : 200%;
 ///<br> $number ranges from :
 ///<br> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 110, 120, 150, 170, 180, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700]
-/// @group Height and Width
-.h{
-  &-i{
+/// @group HnW
+.h
+{
+  &-i
+  {
     height: inherit;
   }
 
@@ -172,13 +176,18 @@ $dimms : (
     height: inherit;
     width: inherit;
   }
+  &w-uns
+  {
+    height: unset;
+    width: unset;
+  }
 
-  &-i_i
+  &-inh_i
   {
     height: inherit !important;
   }
 
-  &w-i_i
+  &w-inh_i
   {
     height: inherit !important;
     width: inherit !important;
@@ -196,11 +205,14 @@ $dimms : (
   }
 }
 
-.w{
-  &-i{
+.w
+{
+  &-i
+  {
     width: inherit;
 
-    &_i{
+    &_i
+    {
       width: inherit !important;
     }
   }
@@ -219,49 +231,50 @@ $dimms : (
 $nums: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 110, 120, 150, 170, 180, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700;
 
 $metrics: (
-    "h" : "height",
-    "min-h" : "min-height",
-    "max-h" : "max-height",
-    "w" : "width",
-    "min-w" : "min-width",
-    "max-w" : "max-width",
-    "hw" : ""
+        "h" : "height",
+        "min-h" : "min-height",
+        "max-h" : "max-height",
+        "w" : "width",
+        "min-w" : "min-width",
+        "max-w" : "max-width",
+        "hw" : ""
 );
 
 /// Creates height and width rules
-/// @param list {list<number>}
-/// @param rule-key {String}
-/// @param metric {String}
-/// @param unit {String}
+/// @param {list<number>} list
+/// @param {String} rule-key
+/// @param {String} metric
+/// @param {String} unit
 @mixin create-rules($list, $rule-key, $metric, $unit)
 {
   @each $num in $list
   {
     @if ($rule-key != "")
     {
-      @if($unit == "px"){
+      @if ($unit == "px")
+      {
         .#{$metric}#{$num}
         {
           #{$rule-key}: #{$num}#{$unit};
         }
-      }
-      @else{
+      } @else
+      {
         .#{$metric}#{$num}p
         {
           #{$rule-key}: #{$num}#{$unit};
         }
       }
-    }
-    @else
+    } @else
     {
-      @if($unit == "px"){
+      @if ($unit == "px")
+      {
         .#{$metric}#{$num}
         {
           height: #{$num}#{$unit};
           width: #{$num}#{$unit};
         }
-      }
-      @else{
+      } @else
+      {
         .#{$metric}#{$num}p
         {
           height: #{$num}#{$unit};
@@ -280,3 +293,43 @@ $metrics: (
   @include create-rules($nums, #{$rule-key}, $met, "%");
 }
 
+.max-
+{
+  &w
+  {
+    &-uns
+    {
+      max-width: unset;
+    }
+    &-ini
+    {
+      max-width: initial;
+    }
+  }
+  &h
+  {
+    &-uns
+    {
+      max-height: unset;
+    }
+    &-ini
+    {
+      max-height: initial;
+    }
+  }
+
+  &hw
+  {
+    &-uns
+    {
+      max-height: unset;
+      max-width: unset;
+    }
+    &-ini
+    {
+      max-height: initial;
+      max-width: initial;
+    }
+  }
+
+}

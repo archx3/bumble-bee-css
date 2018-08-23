@@ -1,3 +1,5 @@
+///@author Kobina Koomson G.
+
 /*region rows and cols*/
 ///spacing-pc-age
 /// @group containers
@@ -15,25 +17,58 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
   {
     @each $num in $nums
     {
+      .#{$dir}-#{$num}
+      {
+        width: 50%;
+        display: inline-block;
+        float: left;
+      }
+
       @each $spacing in $spacing-pc-age
       {
         @if ($spacing == "")
         {
           @if ($dir == "col")
           {
-            .#{$dir}
+            .#{$dir}-2
             {
               width   : 100%/$num;
               display : inline-block;
               float   : left;
+
+              &:first-of-type
+              {
+                margin-right: 5px;
+                &_pd {
+                  margin-right: 0;
+                  padding-right: 5px;}
+              }
+              &:last-of-type {margin-left: 5px;}
+              &_pd {&:last-of-type {
+                margin-left: 0;
+                padding-left: 5px;}
+              } //use padding if _pd is attaches to the class names
             }
           }
           @if ($dir == "row")
           {
-            .#{$dir}
+            .#{$dir}-2
             {
               height  : 100%/$num;
               display : block;
+
+              &:first-of-type
+              {
+                margin-top: 5px;
+                &_pd {
+                  margin-top: 0;
+                  padding-top: 5px;}
+              }
+              &:last-of-type {margin-bottom: 5px;}
+              &_pd {&:last-of-type{
+                margin-bottom: 0;
+                padding-bottom: 5px;}} //use padding if _pd is added to the class names
+
             }
           }
         } @else
@@ -47,22 +82,38 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
               float        : left;
               margin-left  : #{$spacing/2}#{'%'};
               margin-right : #{$spacing/2}#{'%'};
+
+              &_pd {
+                margin-left  : 0;
+                margin-right : 0;
+                padding-left  : #{$spacing/2}#{'%'};
+                padding-right : #{$spacing/2}#{'%'};
+              }
             }
             .#{$dir}-#{$num}-#{$spacing}-#{'no-fl'}
             {
               width        : (100%/$num) - $spacing;
               margin-left  : #{$spacing/2}#{'%'};
               margin-right : #{$spacing/2}#{'%'};
+
+              &_pd {
+                margin-left  : 0;
+                margin-right : 0;
+                padding-left  : #{$spacing/2}#{'%'};
+                padding-right : #{$spacing/2}#{'%'};
+              }
             }
 
-            .#{$dir}-#{$num}-#{$spacing}:first-of-type
+            .#{$dir}-#{$num}-#{$spacing}
             {
-              margin-left : 0;
+              &:first-of-type {margin-left : 0;}
+              &_pd{&:first-of-type {padding-left : 0;}}
             }
 
             .#{$dir}-#{$num}-#{$spacing}:last-of-type
             {
-              margin-right : 0;
+              &:first-of-type {margin-right : 0;}
+              &_pd{&:first-of-type {padding-right : 0;}}
             }
           }
 
@@ -70,12 +121,18 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
           {
             .#{$dir}-#{$num}-#{$spacing}
             {
-              height        : 100%/$num - $spacing;
+              height        : (100%/$num) - $spacing;
               display       : block;
               margin-top    : #{$spacing/2}#{'%'};
               margin-bottom : #{$spacing/2}#{'%'};
-            }
 
+              &_pd {
+                margin-top    : 0;
+                margin-bottom : 0;
+                padding-top  : #{$spacing/2}#{'%'};
+                padding-bottom : #{$spacing/2}#{'%'};
+              }
+            }
             //.#{$dir}-#{$num}-#{$spacing}:first-of-type
             //{
             //  //margin-top : 0;
@@ -218,6 +275,7 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
           & > *
           {
             width        : (100%/$num) - $spacing;
+
             margin-left  : #{$spacing/2}#{'%'};
             margin-right : #{$spacing/2}#{'%'};
 
@@ -251,6 +309,7 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
           & > *
           {
             height        : (100%/$num) - $spacing;
+            width: 100%;
             margin-top  : #{$spacing/2}#{'%'};
             margin-bottom : #{$spacing/2}#{'%'};
 
@@ -269,17 +328,22 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
   }
 
 }
-
+.col-2
+{
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
 /// @group containers
 .col-2:first-of-type
 {
-  padding-right : 5px;
+  //padding-right : 5px;
 }
 
 /// @group containers
 .col-2:last-of-type
 {
-  padding-left : 5px;
+  //padding-left : 5px;
 }
 
 /// @group containers
@@ -319,6 +383,35 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
   display : block;
 }
 
+.jc-{
+  &sb{
+    justify-content: space-between;
+  }
+  &sa{
+    justify-content: space-around;
+  }
+  &se{
+    justify-content: space-evenly;
+  }
+  &c{
+    justify-content: center;
+  }
+  &l{
+    justify-content: left;
+  }
+  &r{
+    justify-content: right;
+  }
+  &fe{
+    justify-content: flex-end;
+  }
+  &fs{
+    justify-content: flex-start;
+  }
+  &bl{
+    justify-content: baseline;
+  }
+}
 ////region aspect ratio, Heavily influenced by tuts on www.w3schools.com/howto
 /// @group containers
 .a1x1 .container /* 1:1 Aspect Ratio */
@@ -341,25 +434,25 @@ $nums : 2, 3, 4, 5, 6, 7, 8, 9, 10;
 }
 
 /// @group containers
-.a16x9.container
+.a16x9
 {
   padding-top : 56.25%; /* 16:9 Aspect Ratio */
 }
 
 /// @group containers
-.a16x3.container
+.a16x3
 {
   padding-top : 75%; /* 4:3 Aspect Ratio */
 }
 
 /// @group containers
-.a3x2.container
+.a3x2
 {
   padding-top : 66.66%; /* 3:2 Aspect Ratio */
 }
 
 /// @group containers
-.a8x5.container
+.a8x5
 {
   padding-top : 62.5%; /* 8:5 Aspect Ratio */
 }

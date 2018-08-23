@@ -1,0 +1,18 @@
+///@author kobina George Koomson
+
+//Add the feathering
+@for $feather from 1 through 30
+{
+  @for $color-percentage from 1 through 10
+  {
+     .bs-#{$feather}-#{$color-percentage}
+    {
+      box-shadow : 0 0 #{$feather}px #{'rgba('}(0, 0, 0, #{$color-percentage / 10})#{')'};
+    }
+    .bs-#{$feather}-#{$color-percentage}5
+    {
+      box-shadow : 0 0 #{$feather}px #{'rgba('}(0, 0, 0, #{($color-percentage / 10) + .5})#{')'};
+    }
+  }
+}
+

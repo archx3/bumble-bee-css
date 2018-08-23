@@ -1,10 +1,21 @@
-$nums: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100;
+///@author Kobina Koomson G.
+
+
+$nums: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100;
 $positions: (
     "b" : "bottom",
     "t" : "top",
     "l" : "left",
     "r" : "right");
 
+///This function outputs margin related classes and rules
+/// for individual sides of the box | rect (pos)
+///@param {List<Number>} $list The list of numbers from which to generate the
+///@param {String} $rule-key
+///@param {String} $pos The side of the element's box
+///@param {String} $unit The unit of measurement
+///@output .mt3{margin-top : 3px}
+///
 @mixin create-rules($list, $rule-key, $pos, $unit)
 {
   @if($unit == "%")
@@ -28,6 +39,14 @@ $positions: (
   }
 }
 
+///This function outputs margin related classes and rules
+/// for paired sides of the box | rect (pos)
+///@param {List<Number>} $list The list of numbers from which to generate the
+///@param {String} $rule-key
+///@param {String} $pos The side of the element's box
+///@param {String} $unit The unit of measurement
+///@output .mtb3{margin-top : 3px; margin-bottom : 3px}
+///
 @mixin create-rules2($list, $rule-key, $rule-class, $unit)
 {
   @if($unit == "%")
@@ -53,6 +72,11 @@ $positions: (
   }
 }
 
+///Margin related classes and associated rules
+///<br> m{$number} or m{$number}{$percentage}
+///<br> m = margin
+///<br> a = auto
+///<br> 
 .m
 {
 

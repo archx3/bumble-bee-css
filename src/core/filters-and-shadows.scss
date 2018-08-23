@@ -1,0 +1,76 @@
+///@author kobina George Koomson
+
+$garyScale-nums-list : 1, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 5.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 1.0;
+$classes : 1, 15, 2, 25, 3, 35, 4, 45, 5, 55, 6, 65, 7, 75, 8, 85, 9, 95, 10;
+
+.filter
+{
+  ///grayscale filter classes
+  ///<br> gs = grayscale
+  ///<br> filter-gs{$number}  = filter grayscale{$Percentage}
+  ///<br> e.g ".filter-gs05" = fillParent5%
+  ///<br> $number ranges from [05, 1, 15, 2, 25, 3, 35, 4, 45, 5, 55, 6, 65, 7, 75, 8, 85, 9, 95]
+  ///<br> if the $number has one digit (e. 2) the $percentage = $number / 10, so 2 = 0.2
+  ///<br> if the $number has two digits (e. 25) the $percentage = $number / 100, so 25 = 0.25
+  ///<br>
+  ///<br> the $number "05" is a special case, as it equals 1/2 * 10, so 05 = 5
+  ///<br>
+  ///<br>
+  /// @group filter
+  &-gs
+  {
+    &05
+    {
+      filter : #{'grayscale('}.5#{')'};
+    }
+
+    $i : 1;
+    @each $class in $classes
+    {
+      &#{$class}
+      {
+        filter : #{'grayscale('}(#{nth($garyScale-nums-list, $i)})#{')'};
+      }
+      $i : $i + 1;
+    }
+  }
+
+  &-blur
+  {
+    @for $num from 1 through 30
+    {
+      &#{$num}
+      {
+        filter : blur(#{$num}px);
+      }
+    }
+  }
+
+}
+
+//add the x-offset
+@for $x-offset from 1 through 10
+{
+  //Add the y-offset
+  @for $y-offset from 1 through 10
+  {
+    //Add the feathering
+    @for $feather from 1 through 30
+    {
+      @for $color-percentage from 1 through 10
+      {
+         .box-shadow-#{$x-offset}-#{$y-offset}-#{$feather}-#{$color-percentage}
+        {
+          box-shadow : #{$x-offset}px #{$y-offset}px #{$feather}px #{'rgba('}(0, 0, 0, #{$color-percentage / 10})#{')'};
+        }
+
+        ///Drop Shadow Filter
+        ///ds = drop shadow
+        .filter-ds-#{$x-offset}-#{$y-offset}-#{$feather}-#{$color-percentage}
+        {
+          filter: drop-shadow(#{$x-offset}px #{$y-offset}px #{$feather}px #{'rgba('}(0, 0, 0, #{$color-percentage / 10}))#{')'};
+        }
+      }
+    }
+  }
+}

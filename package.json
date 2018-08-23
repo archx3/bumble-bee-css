@@ -1,12 +1,20 @@
 {
   "name": "bumblebee-css",
   "version": "1.2.2",
-  "description": "",
+  "author": "Kobina Koomson",
+  "description": "Sexy front-end framework, Minimalist, Powerful, ·Intuitive, CSS framework for faster and easier web development·Can be integrated at any stage in a project. Responsive at heart. absolutely free to use",
   "keywords": [
     "css",
     "framework",
-    "lightwieght"
+    "lightwieght",
+    "respomsive",
+    "css grid"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/archX3/bumble-bee-css"
+  },
+  "license": "MIT",
   "files": [
     "build",
     "dist",
@@ -18,12 +26,19 @@
   ],
   "homepage": "",
   "bugs": "",
-  "license": "MIT",
   "devDependencies": {
+    "browser-sync": "2.24.3",
+    "cssnano": "^3.10.0",
     "gulp": "^3.9.1",
+    "gulp-clean-css": "3.9.4",
+    "gulp-header": "2.0.5",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "3.0.0",
     "sassdoc": "^2.5.0"
   },
   "dependencies": {
-    "gulp-sass": "^3.2.1"
+    "autoprefixer": "^8.6.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1"
   }
 }

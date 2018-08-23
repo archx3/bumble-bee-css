@@ -1,3 +1,4 @@
+///@author Kobina Koomson G.
 /**
 * SH = shorthand
 * ctr = center
@@ -15,16 +16,28 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 ///@group Display and Positioning
 .hidden, .hide
 {
-  display: none;
+  display: none !important;
 }
 
+.invisible{
+  visibility: hidden;
+  &_collapse{
+    visibility: collapse;
+  }
+}
+
+
+.visible{
+  visibility: visible;
+}
+
+///deprecated
 /// Center an element within it's parent
 /// "ctr" is shorthand for "center", "t" for "to", "p" for "parent"
 ///@group Positioning
-.centerToDiv, .ctr-t-p
-{
-  margin: 0 auto;
-}
+//.centerToDiv, .ctr-t-p
+//{
+//  margin: 0 auto;//}
 
 /// For floating an element right
 /// f = float
@@ -44,6 +57,18 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
   float: left !important;
 }
 
+///sets the display property of an element to inline
+///@group Display
+.di{
+  display: inline;
+}
+
+///sets the display property of an element to inline table
+///@group Display
+.it{
+  display: inline-table;
+}
+
 ///sets the display property of an element to ruby
 ///@group Display
 .ruby{
@@ -52,14 +77,14 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 
 ///sets the display property of an element to "inline-block"
 ///@group Display
-.inlineBlock, .inline-block, .iblk
+.iblk
 {
   display: inline-block;
 }
 
 ///sets the display property of an element to "block"
 ///@group Display
-.block, .blk
+.blk
 {
   display: block;
 }
@@ -80,11 +105,26 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 
 ///sets the position property of an element to "fixed"
 ///@group Positioning
-.fxd, .fixed
+.fxd
 {
   position: fixed;
 }
 
+$mod_nums: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 26, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 110, 115, 120, 125, 150, 170, 175, 180, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700;
+
+@mixin generatePositionModes($mod_nums, $position){
+  @each $mod_num in $mod_nums
+  {
+    &-#{$mod_num}
+    {
+      #{$position}: calc(100% - #{$mod_num}#{'px'});
+    }
+    &-#{$mod_num}_plus
+    {
+      #{$position}: calc(100% + #{$mod_num}#{'px'});
+    }
+  }
+}
 
 ///Generating top positioning rules
 ///@group Positioning
@@ -97,6 +137,11 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
     &#{$num}p
     {
       top: #{$num}#{'%'};
+
+      @if($num == 100)
+      {
+        @include generatePositionModes($mod_nums, "top");
+      }
     }
   }
 
@@ -117,7 +162,13 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
     &#{$num}p
     {
       bottom : #{$num}#{'%'};
+      @if($num == 100)
+      {
+        @include generatePositionModes($mod_nums, "bottom");
+      }
     }
+
+
   }
 
   &-ctr{
@@ -136,6 +187,11 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
     &#{$num}p
     {
       left : #{$num}#{'%'};
+
+      @if($num == 100)
+      {
+        @include generatePositionModes($mod_nums, "left");
+      }
     }
   }
 
@@ -156,6 +212,11 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
     &#{$num}p
     {
       right : #{$num}#{'%'};
+
+      @if($num == 100)
+      {
+        @include generatePositionModes($mod_nums, "right");
+      }
     }
   }
 
@@ -174,6 +235,8 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
     &#{$num}{
       z-index : #{$num};
     }
+    &#{$num}_i{z-index : #{$num} !important;
+    }
   }
 }
 
@@ -190,7 +253,7 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 /// "s" is shorthand for scroll
 /// sets overflow x and y to "auto"
 ///@group Display
-.scrollable, .scroll, .xys
+.xys
 {
   overflow: auto;
 }
@@ -199,7 +262,7 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 /// "y" is shorthand for y-axis
 /// "s" is shorthand for scroll
 ///@group Display
-.yScroll, .ys
+.ys
 {
   overflow-y: auto;
 }
@@ -208,7 +271,7 @@ $nums : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 /// "x" is shorthand for x-axis
 /// "s" is shorthand for scroll
 ///@group Display
-.xScroll, .xs
+.xs
 {
   overflow-x: auto;
 }
@@ -234,6 +297,16 @@ $nums : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
   @each $num in $nums
   {
     &#{$num}
+    {
+      opacity: #{nth($ps, $num)};
+    }
+  }
+}
+
+.hov-op{
+  @each $num in $nums
+  {
+    &#{$num}:hover
     {
       opacity: #{nth($ps, $num)};
     }
@@ -276,6 +349,7 @@ $nums : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2
       }
     }
   }
+
   &-v{
     position: absolute;
     top: 50%;
@@ -344,3 +418,4 @@ $nums : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2
     align-items: center;
   }
 }
+

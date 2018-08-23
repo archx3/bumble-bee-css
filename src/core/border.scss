@@ -1,3 +1,5 @@
+///@author Kobina Koomson G.
+
 $border-color-pri: var(--dividerColor);
 
 ///function that creates border classes and border rules
@@ -52,6 +54,7 @@ $border-color-pri: var(--dividerColor);
   {
 
     @include create("border", $nums);
+    
   }
 
   @each $pos, $value in $border-positions
@@ -133,12 +136,13 @@ $border-color-pri: var(--dividerColor);
   }
 }
 
+///@deprecated
 /// make an element a circle
 ///<br> @alias for .rc50p
 ///<br> Requires the element to have equal height and width
 ///<br> else the element will become an ellipse
 /// @group border
-.circle
-{
-  border-radius: 50%;
-}
+//.circle
+//{
+//  border-radius: 50%;
+//}

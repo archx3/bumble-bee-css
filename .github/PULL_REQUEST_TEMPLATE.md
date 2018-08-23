@@ -33,4 +33,4 @@ If adding a **new feature**, the PR's description includes:
 - [ ] A convincing reason for adding this feature (to avoid wasting your time, it's best to open a suggestion issue first and wait for approval before working on it)
 
 **Other information:**
-Adapted from VueJs
+

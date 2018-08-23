@@ -1,3 +1,7 @@
+///@author Kobina Koomson G.
+
+/// Set these styles on all elements
+///core
 *
 {
   margin                  : 0;
@@ -23,33 +27,16 @@
   outline : none;
 }
 
-@font-face
-{
-  font-family : "segoe mdl2 Assets";
-  src         : url("../fonts/segmdl2.ttf");
-}
-
-a:hover, a:active, a:focus
-{
-  /* styling for any way a link is about to be used */
-  outline : none;
-}
-
-i.fa:not(.fa-calendar), button span
-{
-  pointer-events : none;
-}
-
 /*region Menu Bar*/
-
 body
 {
-  background        : #fbfbfb;
+  //background        : #fbfbfb;
 
   /*background-image: url("../images/homebs/bgs1.jpg");*/
   background-size   : cover;
   background-repeat : no-repeat;
-  overflow          : hidden; //msg commented this out to allow scrolling the page
+  //msg commented the line below out to allow scrolling the page
+  //overflow          : hidden;
 }
 
 body, html
@@ -68,37 +55,67 @@ input::-moz-focus-inner
   border : 0;
 }
 
-p, h1, h3, div, section
-{
-  cursor : default;
-}
-
 a
 {
   text-decoration : none;
 }
 
-li
-{
-  list-style : none;
-}
-
+///Remove outline (Thick blue line or dotted line that appears on elements when they are in focus
 a:hover, a:active, a:focus
 {
   /* styling for any way a link is about to be used */
   outline : none;
 }
+li
+{
+  list-style : none;
+}
 
-.npe
+///Disables pointer events an element
+/// @group  core
+.pe-n
 {
   pointer-events : none;
 }
 
-.pe
+///Enables pointer events an element
+/// @group  core
+.pe-a
 {
   pointer-events : all;
 }
 
+
+
+///
+.bxz{
+  &-bb{
+    box-sizing: border-box;
+  }
+  &-cb{
+    box-sizing: content-box;
+  }
+}
+
+///Set the cursor of [span, p, h1, h2, h3, h4, h5, h6, div, section]::before, ::after to default
+span, p, h1, h2, h3, h4, h5, h6, div, section
+{
+  cursor : default;
+
+  &::before{
+    cursor : default;
+  }
+
+  &::after{
+    cursor : default;
+  }
+}
+
+///sets the mouse pointer (cursor) that shows when the mouse is over the element
+///<br> cur-{$type} = cursor{Type of cursor(system defined)}
+///<br> $type ranges from [ptr = pointer, rr = row resize, dflt | dft = default,
+///<br> cr = col-resize, ner = nwr = north west resize, nd = no drop, busy | n-a = not allowed]
+/// @group  core
 .cur
 {
   &-
@@ -140,17 +157,12 @@ a:hover, a:active, a:focus
   }
 }
 
+/// Disable pointer events on
 i.fa:not(.fa-calendar), button span
 {
   pointer-events : none;
 }
-
-p, h1, h3, div, section
-{
-  cursor : default;
-}
-
-select
+/*select
 {
   -moz-appearance     : none;
   -webkit-appearance  : none;
@@ -160,9 +172,4 @@ select
   background-size     : 30px;
   padding-right       : 25px !important;
   outline             : none;
-}
-
-select:focus
-{
-  outline : none;
-}
+}*/
