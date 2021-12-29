@@ -6,9 +6,7 @@
   <h3 align="center">Bumble-bee-css</h3>
 
   <p align="center">
-    ·Sexy front-end framework·
-    <br>
-    ·Minimalist, ·Powerful, ·Intuitive, CSS framework for faster and easier web development
+    ·Intuitive, CSS framework for faster and easier web development
     <br>
     ·Can be integrated at any stage in a project.
     <br>
